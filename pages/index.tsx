@@ -42,7 +42,9 @@ const Home: NextPage = () => {
                 width={50}
                 height={50}
               />
-              <h1 className='ml-2 text-3xl'>Gator</h1>
+              <h1 className='ml-2 text-4xl font-bold text-transparent font-WildLife bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400'>
+                GATOR
+              </h1>
             </a>
           </Link>
 
@@ -88,7 +90,9 @@ const Home: NextPage = () => {
             height={300}
           />
         </div>
-        <h1 className='ml-2 text-3xl'>Power the Digital Swamp</h1>
+        <h1 className='mt-8 ml-2 font-bold text-transparent text-7xl font-WildLife bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400'>
+          Power the Digital Swamp
+        </h1>
       </main>
 
       <footer className='flex px-2 pt-8 pb-4 space-x-12 bg-green-500/50'>
