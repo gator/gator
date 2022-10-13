@@ -17,4 +17,10 @@
   #__next {
     @apply h-full;
   }
+
+  main {
+    @apply h-[83.7%];
+    @apply bg-green-500/25;
+    @apply pt-28;
+  }
 }
