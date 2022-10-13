@@ -1,28 +1,37 @@
-import type { NextPage } from 'next'
+import type { ReactElement } from 'react'
+import type { NextPageWithLayout } from './_app'
 import Head from 'next/head'
 import Image from 'next/image'
+import Layout from '../components/layout'
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Gator</title>
         <meta name='description' content='Software company' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Image
-        src={'https://c.tenor.com/EzGd6XFZgZ4AAAAC/funny-alligator.gif'}
-        alt='landing'
-        layout='fill'
-        draggable={false}
-      />
-
-      <p style={{ color: 'white', position: 'absolute', bottom: 0, right: 0 }}>
-        yes, it&apos;s a croc. still funny tho.
-      </p>
-    </div>
+      <main className='text-center'>
+        <div>
+          <Image
+            alt='Gator Logo'
+            src='/gatorlogo.png'
+            width={300}
+            height={300}
+          />
+        </div>
+        <h1 className='mt-8 ml-2 font-bold text-transparent text-7xl font-WildLife bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400'>
+          Power the Digital Swamp
+        </h1>
+      </main>
+    </>
   )
+}
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>
 }
 
 export default Home
