@@ -52,7 +52,7 @@ const Footer: FC = () => {
           <li>
             <Link href='#'>
               <a>
-                <h2>Privacy & Legal</h2>
+                <h2>Legal</h2>
               </a>
             </Link>
           </li>
