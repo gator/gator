@@ -26,7 +26,7 @@ const Header: FC = () => {
     <header onMouseLeave={() => closeMenu()}>
       <div className='flex items-center justify-between px-4 py-2 text-black'>
         <Link href='/'>
-          <a className='flex items-center'>
+          <a className='flex items-center w-full'>
             <Image
               alt='Gator Logo'
               src='/gatorlogo.png'
@@ -39,7 +39,7 @@ const Header: FC = () => {
           </a>
         </Link>
 
-        <nav className='space-x-10'>
+        <nav className='w-full space-x-10'>
           <ul>
             <li
               className='font-bold text-green-500 cursor-default'
