@@ -25,22 +25,24 @@ const Header: FC = () => {
   return (
     <header onMouseLeave={() => closeMenu()}>
       <div className='flex items-center justify-between px-4 py-2 text-black'>
-        <Link href='/'>
-          <a className='flex items-center w-full'>
-            <Image
-              alt='Gator Logo'
-              src='/gatorlogo.png'
-              width={50}
-              height={50}
-            />
-            <h1 className='ml-2 text-4xl font-bold text-transparent font-WildLife bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400'>
-              GATOR
-            </h1>
-          </a>
-        </Link>
+        <div className='w-full'>
+          <Link href='/'>
+            <a className='flex items-center w-fit'>
+              <Image
+                alt='Gator Logo'
+                src='/gatorlogo.png'
+                width={50}
+                height={50}
+              />
+              <h1 className='ml-2 text-4xl font-bold text-transparent font-WildLife bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400'>
+                GATOR
+              </h1>
+            </a>
+          </Link>
+        </div>
 
         <nav className='w-full space-x-10 text-center'>
-          <ul>
+          <ul className='flex justify-center'>
             <li
               className='font-bold text-green-500 cursor-default'
               onMouseOver={() => setMenu(<Products />)}
