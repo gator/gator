@@ -39,7 +39,7 @@ const Header: FC = () => {
           </a>
         </Link>
 
-        <nav className='w-full space-x-10'>
+        <nav className='w-full space-x-10 text-center'>
           <ul>
             <li
               className='font-bold text-green-500 cursor-default'
@@ -58,11 +58,13 @@ const Header: FC = () => {
             </ul> */}
         </nav>
 
-        <Link href='/contact'>
-          <a className='px-2 text-lg font-bold text-green-400 rounded-full bg-green-200/40 hover:bg-green-200/50 hover:text-green-500'>
-            Contact
-          </a>
-        </Link>
+        <div className='w-full text-right'>
+          <Link href='/contact'>
+            <a className='px-2 text-lg font-bold text-green-400 rounded-full bg-green-200/40 hover:bg-green-200/50 hover:text-green-500'>
+              Contact
+            </a>
+          </Link>
+        </div>
       </div>
 
       {menu && (
