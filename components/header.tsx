@@ -27,15 +27,15 @@ const Header: FC = () => {
       <div className='flex items-center justify-between px-4 py-2 text-black'>
         <div className='w-full'>
           <Link href='/'>
-            <a className='flex items-center w-fit'>
+            <a className='flex items-end w-fit'>
               <Image
                 alt='Gator Logo'
-                src='/gatorlogo.png'
+                src='/Alligator2.png'
                 width={50}
                 height={50}
               />
-              <h1 className='ml-2 text-4xl font-bold text-transparent font-WildLife bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400'>
-                GATOR
+              <h1 className='text-4xl font-bold text-transparent font-WildLife bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400'>
+                ATOR
               </h1>
             </a>
           </Link>

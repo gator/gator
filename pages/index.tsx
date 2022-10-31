@@ -17,13 +17,13 @@ const Home: NextPageWithLayout = () => {
         <div>
           <Image
             alt='Gator Logo'
-            src='/gatorlogo.png'
+            src='/Alligator2.png'
             width={300}
             height={300}
           />
         </div>
         <h1 className='mt-8 ml-2 font-bold text-transparent text-7xl font-WildLife bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400'>
-          Power the Digital Swamp
+          The Digital Swamp
         </h1>
       </main>
     </>

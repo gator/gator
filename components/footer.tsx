@@ -6,7 +6,7 @@ const Footer: FC = () => {
   return (
     <footer className='flex px-2 pt-8 pb-4 space-x-12 bg-green-500/50'>
       <div className='flex items-center'>
-        <Image alt='Gator Logo' src='/gatorlogo.png' width={30} height={30} />
+        <Image alt='Gator Logo' src='/Alligator2.png' width={30} height={30} />
         <h1 className='ml-2 text-lg'>Gator</h1>
       </div>
 
