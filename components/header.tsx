@@ -34,9 +34,6 @@ const Header: FC = () => {
                 width={50}
                 height={50}
               />
-              <h1 className='text-4xl font-bold text-transparent font-WildLife bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400'>
-                ATOR
-              </h1>
             </a>
           </Link>
         </div>
