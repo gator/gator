@@ -4,7 +4,9 @@ import Image from 'next/image'
 import { useState } from 'react'
 import {
   PencilSquareIcon,
-  CubeTransparentIcon
+  CubeTransparentIcon,
+  ArrowTopRightOnSquareIcon,
+  HomeIcon
 } from '@heroicons/react/24/solid'
 
 const Header: FC = () => {
@@ -67,7 +69,7 @@ const Header: FC = () => {
       </div>
 
       {menu && (
-        <div className='flex justify-center mt-8 mb-4 border-t-2 backdrop-blur-xl'>
+        <div className='flex justify-center my-8 border-t-2'>
           {menu}
         </div>
       )}
@@ -77,8 +79,21 @@ const Header: FC = () => {
 
 const Products: FC = () => {
   return (
-    <ul className='flex px-4 pt-10 space-x-4'>
-      <li className='p-2 bg-green-100 rounded-lg cursor-pointer w-60 hover:bg-green-200'>
+    <ul className='flex flex-wrap justify-center gap-4 px-4 pt-10'>
+      <li className='p-2 bg-green-100 rounded-lg cursor-pointer h-28 w-60 hover:bg-green-200'>
+        <Link href='#'>
+          <a>
+            <div className='flex items-center'>
+              <CubeTransparentIcon className='w-5 h-5 mr-1' />
+              <h2 className='font-bold'>Anatomy</h2>
+            </div>
+            <p>Coming soon...</p>
+            {/* <p>Learn human anatomy through interactive 3D models.</p> */}
+          </a>
+        </Link>
+      </li>
+
+      <li className='p-2 bg-green-100 rounded-lg cursor-pointer h-28 w-60 hover:bg-green-200'>
         <Link href='https://bednotes.gator.sh'>
           <a>
             <div className='flex items-center'>
@@ -89,15 +104,29 @@ const Products: FC = () => {
           </a>
         </Link>
       </li>
-      <li className='p-2 bg-green-100 rounded-lg cursor-pointer w-60 hover:bg-green-200'>
+
+      <li className='p-2 bg-green-100 rounded-lg cursor-pointer h-28 w-60 hover:bg-green-200'>
         <Link href='#'>
           <a>
             <div className='flex items-center'>
-              <CubeTransparentIcon className='w-5 h-5 mr-1' />
-              <h2 className='font-bold'>Anatomy</h2>
+              <ArrowTopRightOnSquareIcon className='w-5 h-5 mr-1' />
+              <h2 className='font-bold'>To</h2>
             </div>
             <p>Coming soon...</p>
-            {/* <p>Learn Human Anatomy Through Interactive 3D Models.</p> */}
+            {/* <p>URL shortener.</p> */}
+          </a>
+        </Link>
+      </li>
+
+      <li className='p-2 bg-green-100 rounded-lg cursor-pointer h-28 w-60 hover:bg-green-200'>
+        <Link href='#'>
+          <a>
+            <div className='flex items-center'>
+              <HomeIcon className='w-5 h-5 mr-1' />
+              <h2 className='font-bold'>Uncle George</h2>
+            </div>
+            <p>Coming soon...</p>
+            {/* <p>Community home services.</p> */}
           </a>
         </Link>
       </li>
