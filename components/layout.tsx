@@ -8,11 +8,11 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <>
+    <div className='flex flex-col h-screen'>
       <Header />
       {children}
       <Footer />
-    </>
+    </div>
   )
 }
 
