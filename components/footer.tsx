@@ -4,14 +4,18 @@ import Image from 'next/image'
 
 const Footer: FC = () => {
   return (
-    <footer className='flex px-2 pt-8 pb-4 space-x-12 bg-green-500/50'>
-      <div className='flex items-center'>
+    <footer className='flex items-center justify-center flex-grow px-2 pt-8 pb-4 space-x-12 bg-green-500/50'>
+      <div className='flex items-center space-x-2'>
+        <Image alt='Gator Logo' src='/Alligator2.png' width={30} height={30} />
+        <p>Gator &copy; 2022</p>
+      </div>
+      {/* <div className='flex items-center'>
         <Image alt='Gator Logo' src='/Alligator2.png' width={30} height={30} />
         <h1 className='ml-2 text-lg'>Gator</h1>
-      </div>
+      </div> */}
 
-      <nav className='flex space-x-8'>
-        <ul>
+      {/* <nav className='flex space-x-8'> */}
+        {/* <ul>
           <h1 className='underline'>Products</h1>
           <li>
             <Link href='https://bednotes.gator.sh'>
@@ -20,9 +24,9 @@ const Footer: FC = () => {
               </a>
             </Link>
           </li>
-        </ul>
+        </ul> */}
 
-        <ul>
+        {/* <ul>
           <h1 className='underline'>Company</h1>
           <li>
             <Link href='#'>
@@ -56,8 +60,8 @@ const Footer: FC = () => {
               </a>
             </Link>
           </li>
-        </ul>
-      </nav>
+        </ul> */}
+      {/* </nav> */}
     </footer>
   )
 }
