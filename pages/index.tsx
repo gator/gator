@@ -23,7 +23,7 @@ const Home: NextPageWithLayout = () => {
           />
         </div>
         <h1 className='mt-8 ml-2 font-bold text-transparent text-7xl font-WildLife bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400'>
-          The Digital Swamp
+          Software that swims with you
         </h1>
       </main>
     </>
