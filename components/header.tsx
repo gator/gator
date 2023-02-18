@@ -11,7 +11,7 @@ const Header: FC = () => {
   }, [])
 
   return (
-    <header className='p-2 pb-4'>
+    <header className='pb-4 m-2 border-b-[1px] border-black/5'>
       <div className='flex items-center justify-between'>
         <div className='flex'>
           <Link href='/'>
