@@ -1,67 +1,23 @@
 import type { FC } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 
 const Footer: FC = () => {
   return (
-    <footer className='flex items-center justify-center flex-grow px-2 pt-8 pb-4 space-x-12 bg-green-500/50'>
-      <div className='flex items-center space-x-2'>
-        <Image alt='Gator Logo' src='/Alligator2.png' width={30} height={30} />
-        <p>Gator &copy; 2022</p>
+    <footer className='flex flex-col items-center p-2 mt-auto space-y-4 text-white bg-black'>
+      <div>
+        <Image alt='Gator Logo' src='/Alligator2.png' width={25} height={25} />
       </div>
-      {/* <div className='flex items-center'>
-        <Image alt='Gator Logo' src='/Alligator2.png' width={30} height={30} />
-        <h1 className='ml-2 text-lg'>Gator</h1>
-      </div> */}
 
-      {/* <nav className='flex space-x-8'> */}
-        {/* <ul>
-          <h1 className='underline'>Products</h1>
-          <li>
-            <Link href='https://bednotes.gator.sh'>
-              <a>
-                <h2>Bed Notes</h2>
-              </a>
-            </Link>
-          </li>
-        </ul> */}
-
-        {/* <ul>
-          <h1 className='underline'>Company</h1>
-          <li>
-            <Link href='#'>
-              <a>
-                <h2>About</h2>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href='#'>
-              <a>
-                <h2>Team</h2>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href='#'>
-              <a>
-                <h2>Careers</h2>
-              </a>
-            </Link>
-          </li>
-        </ul>
-
-        <ul>
-          <h1 className='underline'>Resources</h1>
-          <li>
-            <Link href='#'>
-              <a>
-                <h2>Legal</h2>
-              </a>
-            </Link>
-          </li>
-        </ul> */}
-      {/* </nav> */}
+      <div className='flex px-2 py-1 space-x-4 bg-white rounded-full w-fit'>
+        <a href='https://github.com/gator' target='_blank'>
+          <span className='sr-only'>GitHub</span>
+          <img src='/github_icon.svg' className='w-5 h-5' />
+        </a>
+        <a href='https://www.linkedin.com/company/gator' target='_blank'>
+          <span className='sr-only'>LinkedIn</span>
+          <img src='/linkedin_icon.svg' className='w-5 h-5' />
+        </a>
+      </div>
     </footer>
   )
 }
