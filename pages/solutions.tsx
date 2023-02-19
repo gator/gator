@@ -1,6 +1,5 @@
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
-import Link from 'next/link'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
