@@ -20,6 +20,7 @@ const Header: FC = () => {
               height={25}
               width={25}
               onClick={() => setMobileMenuOpen(false)}
+              className='cursor-pointer'
             />
           </Link>
           <nav className='hidden ml-4 sm:block'>
