@@ -16,7 +16,19 @@ const Team: NextPageWithLayout = () => {
         <div className='flex flex-col items-center justify-center mt-20 gap-28 sm:flex-row'>
           <div>
             <img src='/Alligator2.png' alt='Team' className='mb-4 w-28 h-28' />
-            <h3 className='text-sm text-black/50'>Founder</h3>
+            <div className='flex justify-between'>
+              <h3 className='text-sm text-black/50'>Founder</h3>
+              <a
+                href='https://www.linkedin.com/in/vijaystroup/'
+                target='_blank'
+              >
+                <span className='sr-only'>LinkedIn</span>
+                <img
+                  src='/linkedin_icon.svg'
+                  className='w-5 h-5 opacity-50 hover:opacity-100'
+                />
+              </a>
+            </div>
             <h2 className='text-xl font-bold'>Vijay Stroup</h2>
             <p className='italic'>I like making stuff.</p>
           </div>
