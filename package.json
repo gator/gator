@@ -6,12 +6,13 @@
     "node": "16.16.0"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "doppler run -- next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@googleapis/sheets": "^4.0.1",
     "@heroicons/react": "^2.0.12",
     "next": "12.1.6",
     "next-seo": "^5.15.0",
