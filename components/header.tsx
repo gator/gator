@@ -42,7 +42,7 @@ const Header: FC = () => {
         </div>
 
         <Link href='/contact'>
-          <button className='hidden sm:block px-2 text-white rounded-md bg-gradient-to-br from-[#97E368]/75 to-[#73BC47] w-fit font-bold'>
+          <button className='hidden sm:block px-2 text-white rounded-md bg-gradient-to-br from-[#97E368] to-[#73BC47] w-fit font-bold'>
             Contact
           </button>
         </Link>
@@ -90,7 +90,7 @@ const Header: FC = () => {
               <a onClick={() => setMobileMenuOpen(false)}>Careers</a>
             </Link>
           </li>
-          <li className='px-2 text-white rounded-md bg-gradient-to-br from-[#97E368]/75 to-[#73BC47] w-fit font-bold'>
+          <li className='px-2 text-white rounded-md bg-gradient-to-br from-[#97E368] to-[#73BC47] w-fit font-bold'>
             <Link href='/contact'>
               <a onClick={() => setMobileMenuOpen(false)}>Contact</a>
             </Link>
