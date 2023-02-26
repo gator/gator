@@ -22,7 +22,7 @@ const config: DefaultSeoProps = {
     type: 'website',
     url,
     site_name: title,
-    images: [{ url: image }],
+    images: [{ url: image, width: 1800, height: 1000, alt: title }],
     locale: 'en_US'
   }
 }
