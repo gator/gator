@@ -9,7 +9,7 @@ const Mission: NextPageWithLayout = () => {
       <SEO title='Mission - Gator' />
 
       <main className='text-center'>
-        <h1 className='text-2xl font-bold text-center'>Mission</h1>
+        <h1 className='text-2xl font-black text-center'>Mission</h1>
         <hr className='w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10' />
 
         <p>

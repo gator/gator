@@ -10,7 +10,7 @@ const Solutions: NextPageWithLayout = () => {
       <SEO title='Solutions - Gator' />
 
       <main className='flex flex-col'>
-        <h1 className='text-2xl font-bold text-center'>Solutions</h1>
+        <h1 className='text-2xl font-black text-center'>Solutions</h1>
         <hr className='w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10' />
 
         <div className='mt-10 space-y-10'>
