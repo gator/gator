@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        WildLife: ['WildLife']
+        Nunito: ['Nunito', 'sans-serif']
       }
     }
   },
