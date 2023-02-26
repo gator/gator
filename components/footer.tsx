@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Footer: FC = () => {
   return (
-    <footer className='flex flex-col items-center p-2 mt-auto space-y-4 text-white bg-black'>
+    <footer className='flex flex-col items-center p-2 pt-5 mt-auto space-y-4 text-white bg-black'>
       <div>
         <Image alt='Gator Logo' src='/Alligator2.png' width={25} height={25} />
       </div>
