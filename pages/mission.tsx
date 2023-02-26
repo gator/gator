@@ -32,8 +32,7 @@ const Mission: NextPageWithLayout = () => {
         <ol className='space-y-4 font-bold tracking-wider'>
           <li>Simplicity.</li>
           <li>User Friendliness.</li>
-          <li>Results.</li>
-          <li></li>
+          <li>Reliability.</li>
         </ol>
       </main>
     </>
