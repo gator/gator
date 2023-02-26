@@ -13,7 +13,7 @@ const title = 'Gator'
 const url = 'https://gator.sh'
 const description =
   'Gator provides innovative software solutions that promote the advancement of technology in the healthcare industry. Our tailored, reliable, and scalable products empower healthcare professionals and organizations to streamline operations, enhance patient care, and achieve better outcomes.'
-const image = 'https://to.gator.sh/gator_og.png'
+const image = 'https://gator.sh/gator_og.png'
 
 const config: DefaultSeoProps = {
   title,
