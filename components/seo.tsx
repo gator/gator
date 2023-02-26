@@ -22,8 +22,11 @@ const config: DefaultSeoProps = {
     type: 'website',
     url,
     site_name: title,
-    images: [{ url: image, width: 1800, height: 1000, alt: title }],
+    images: [{ url: image, width: 900, height: 500, alt: title }],
     locale: 'en_US'
+  },
+  twitter: {
+    cardType: 'summary_large_image'
   }
 }
 
