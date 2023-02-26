@@ -1,30 +1,31 @@
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
-import Head from 'next/head'
-import Image from 'next/image'
+import Link from 'next/link'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const Home: NextPageWithLayout = () => {
   return (
     <>
-      <Head>
-        <title>Gator</title>
-        <meta name='description' content='Software company' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+      <SEO />
 
-      <main className='text-center'>
-        <div>
-          <Image
-            alt='Gator Logo'
-            src='/Alligator2.png'
-            width={300}
-            height={300}
-          />
-        </div>
-        <h1 className='mt-8 ml-2 font-bold text-transparent text-7xl font-WildLife bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400'>
-          Software that swims with you
-        </h1>
+      <div
+        className='absolute w-full bg-center bg-repeat mt-52 h-4/5 -z-10 sm:mt-12'
+        style={{ backgroundImage: 'url("/home_background.svg")' }}
+      ></div>
+
+      <main className='p-1 pb-5 mx-auto text-center bg-white rounded-full w-fit'>
+        <h1 className='mt-24 text-5xl font-black'>No Crocodile Tears</h1>
+        <h2 className='mt-5 text-xl font-semibold'>
+          Innovative software solutions to power the next-generation of
+          healthcare.
+        </h2>
+
+        <Link href='/solutions'>
+          <button className='mt-5 outline outline-2 text-xl p-2 text-white rounded-md bg-gradient-to-br from-[#97E368] to-[#73BC47] w-fit font-bold'>
+            See our Solutions
+          </button>
+        </Link>
       </main>
     </>
   )
