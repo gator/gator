@@ -11,7 +11,7 @@ const Header: FC = () => {
   }, [])
 
   return (
-    <header className='pb-4 m-2 border-b-[1px] border-black/5 flex flex-col'>
+    <header className='pb-4 p-2 border-b-[1px] border-black/5 flex flex-col bg-white/30 backdrop-blur-sm'>
       <div className='flex items-center justify-between'>
         <div className='flex'>
           <Link href='/'>

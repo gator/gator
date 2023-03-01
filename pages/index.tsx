@@ -10,12 +10,12 @@ const Home: NextPageWithLayout = () => {
       <SEO />
 
       <div
-        className='absolute w-full bg-center bg-repeat mt-52 h-4/5 -z-10 sm:mt-12'
+        className='absolute w-full bg-center bg-repeat h-4/5 -z-10 sm:mt-12'
         style={{ backgroundImage: 'url("/home_background.svg")' }}
       ></div>
 
-      <main className='p-1 pb-5 mx-auto text-center bg-white rounded-full w-fit'>
-        <h1 className='mt-24 text-5xl font-black'>No Crocodile Tears</h1>
+      <main className='p-5 mx-auto mt-24 text-center bg-white/30 backdrop-blur-sm rounded-xl w-fit'>
+        <h1 className='text-5xl font-black'>No Crocodile Tears</h1>
         <h2 className='mt-5 text-xl font-semibold'>
           Innovative software solutions to power the next-generation of
           healthcare.
