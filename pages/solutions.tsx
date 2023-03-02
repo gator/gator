@@ -19,13 +19,11 @@ const Solutions: NextPageWithLayout = () => {
             <div className=''>
               <h2 className='text-lg font-bold'>Bed Notes</h2>
               <p>
-                Bed Notes is a cloud-based solution that streamlines the process
-                of creating and managing patient care plans. It is designed to
-                help healthcare professionals create, edit, and share care plans
-                with their colleagues and patients. Bed Notes is a powerful tool
-                that enables healthcare professionals to improve patient care
-                and outcomes, while reducing the time and effort required to
-                create and manage care plans.
+                Bed Notes is an application to visualize your unit quickly.
+                Front-line workers can quickly access critical information and
+                real-time updates, saving valuable time and increasing
+                efficiency. This means less communication time, improved patient
+                care, and higher satisfaction rates.
               </p>
               <a
                 href='https://bednotes.gator.sh'
@@ -51,8 +49,8 @@ const Solutions: NextPageWithLayout = () => {
                 information, such as diagnoses, medications, and treatment
                 plans, and ensure that they are properly documented in the
                 patient's medical record. By eliminating the need for manual
-                note-taking and reducing the risk of errors or omissions, our AI
-                scribing tool can help doctors save time, improve accuracy, and
+                note-taking and reducing the risk of errors or omissions,
+                Jonathan can help doctors save time, improve accuracy, and
                 enhance the quality of care for their patients.
               </p>
               <p className='text-blue-500 hover:underline'>
