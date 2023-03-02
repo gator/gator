@@ -11,8 +11,8 @@ const Header: FC = () => {
   }, [])
 
   return (
-    <header className='pb-4 p-2 border-b-[1px] border-black/5 flex flex-col bg-white/30 backdrop-blur-sm'>
-      <div className='flex items-center justify-between'>
+    <header className='z-40 overflow-visible motion-safe:transition-all backdrop-blur-sm bg-opacity-[50%] sticky top-0 left-0 right-0 transform-cpu w-full p-2'>
+      <div className='grid items-center justify-between max-w-5xl grid-flow-col mx-auto sm:border-b-[1px] border-black/5 backdrop-blur pb-4'>
         <div className='flex'>
           <Link href='/'>
             <Image
@@ -69,7 +69,7 @@ const Header: FC = () => {
           mobileMenuOpen ? 'block' : 'hidden'
         } sm:hidden border-t-2 mt-4 pt-2`}
       >
-        <ul className='space-y-2'>
+        <ul className='ml-2 space-y-2'>
           <li>
             <Link href='/solutions'>
               <a onClick={() => setMobileMenuOpen(false)}>Solutions</a>
