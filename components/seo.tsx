@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { type FC } from 'react'
 import { DefaultSeo, NextSeo, NextSeoProps } from 'next-seo'
 import Head from 'next/head'
 import { DefaultSeoProps } from 'next-seo'
@@ -30,7 +30,7 @@ const config: DefaultSeoProps = {
   }
 }
 
-const SEO: React.FC<Props> = ({ image, ...props }) => {
+const SEO: FC<Props> = ({ image, ...props }) => {
   const title = props.title ?? config.title
   const description = props.description || config.description
 

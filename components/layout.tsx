@@ -1,4 +1,4 @@
-import type { FC } from 'react'
+import { type FC } from 'react'
 import Footer from './footer'
 import Header from './header'
 
