@@ -2,6 +2,7 @@ import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { motion } from 'framer-motion'
 
 const Mission: NextPageWithLayout = () => {
   return (
@@ -15,15 +16,32 @@ const Mission: NextPageWithLayout = () => {
       />
 
       <main className='z-10 flex flex-col justify-center h-full text-center top-1/2'>
-        <h1 className='text-6xl font-black tracking-wider mb-14'>
+        <motion.h1
+          className='text-6xl font-black tracking-wider mb-14'
+          initial={{ translateY: 10 }}
+          animate={{ translateY: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           The Mission.
-        </h1>
-        <p className='text-xl'>
+        </motion.h1>
+        <motion.p
+          className='text-xl'
+          initial={{ translateY: 15 }}
+          animate={{ translateY: 0 }}
+          transition={{ duration: 0.75 }}
+        >
           The best care someone can receive is when the care giver is cared for
           too. Helping the helpers goes a long way in the success of Health
           Care.
-        </p>
-        <p className='mt-4 text-xl'>Help Everyone.</p>
+        </motion.p>
+        <motion.p
+          className='mt-4 text-xl'
+          initial={{ translateY: 20 }}
+          animate={{ translateY: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Help Everyone.
+        </motion.p>
       </main>
     </>
   )
