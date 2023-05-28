@@ -5,8 +5,14 @@ import { useRouter } from 'next/router'
 const Footer: FC = () => {
   const router = useRouter()
 
+  const darkPaths = ['/privacy-policy', '/terms-of-use']
+
   return (
-    <footer className='fixed bottom-0 right-0 z-10 mb-5 mr-5 text-sm group'>
+    <footer
+      className={`fixed bottom-0 right-0 z-10 mb-5 mr-5 text-sm group 
+        ${darkPaths.includes(router.pathname) && 'text-black'}
+      `}
+    >
       <Link
         href='/privacy-policy'
         className={`p-2 duration-[150ms] group-hover:opacity-50 hover:!opacity-100 
