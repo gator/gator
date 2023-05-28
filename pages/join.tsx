@@ -2,8 +2,9 @@ import { type ReactElement, useState } from 'react'
 import type { NextPageWithLayout } from './_app'
 import Head from 'next/head'
 import Layout from '../components/layout'
+import { motion } from 'framer-motion'
 
-const Contact: NextPageWithLayout = () => {
+const Join: NextPageWithLayout = () => {
   const [submitting, setSubmitting] = useState(false)
   const [success, setSuccess] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -33,11 +34,18 @@ const Contact: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>Contact - Gator</title>
+        <title>Join - Gator</title>
       </Head>
 
       <main>
-        <h1 className='mt-40 text-6xl font-black'>Join.</h1>
+        <motion.h1
+          className='mt-40 text-6xl font-black'
+          initial={{ translateX: -15 }}
+          animate={{ translateX: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Join.
+        </motion.h1>
 
         {!submitting && success && (
           <>
@@ -235,8 +243,8 @@ const Contact: NextPageWithLayout = () => {
   )
 }
 
-Contact.getLayout = function getLayout(page: ReactElement) {
+Join.getLayout = function getLayout(page: ReactElement) {
   return <Layout>{page}</Layout>
 }
 
-export default Contact
+export default Join
