@@ -10,7 +10,7 @@ const Header: FC = () => {
   const router = useRouter()
 
   return (
-    <header className='fixed top-0 z-10 flex items-center justify-between w-full p-4 bg-black'>
+    <header className='fixed top-0 z-10 flex items-center justify-between w-full px-4 py-2 bg-black'>
       <nav onClick={() => console.log('click')}>
         <Link href='/'>
           <Image src='/Alligator2.png' height={30} width={30} alt='logo' />
