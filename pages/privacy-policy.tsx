@@ -67,25 +67,25 @@ const PrivacyPolicy: NextPageWithLayout = () => {
 
       <ul className='ml-4 list-inside'>
         <li className='list-disc'>
-          Provide, operate, and maintain our website
+          Provide, operate, and maintain our website.
         </li>
         <li className='list-disc'>
-          Improve, personalize, and expand our website
+          Improve, personalize, and expand our website.
         </li>
         <li className='list-disc'>
-          Understand and analyze how you use our website
+          Understand and analyze how you use our website.
         </li>
         <li className='list-disc'>
-          Develop new products, services, features, and functionality
+          Develop new products, services, features, and functionality.
         </li>
         <li className='list-disc'>
           Communicate with you, either directly or through one of our partners,
           including for customer service, to provide you with updates and other
           information relating to the website, and for marketing and promotional
-          purposes
+          purposes.
         </li>
-        <li className='list-disc'>Send you emails</li>
-        <li className='list-disc'>Find and prevent fraud</li>
+        <li className='list-disc'>Send you emails.</li>
+        <li className='list-disc'>Find and prevent fraud.</li>
       </ul>
 
       <h2 className='mt-10 text-lg font-bold'>Log Files</h2>
