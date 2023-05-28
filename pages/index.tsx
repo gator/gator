@@ -9,24 +9,14 @@ const Home: NextPageWithLayout = () => {
     <>
       <SEO />
 
-      <div
-        className='absolute w-full bg-center bg-repeat h-4/5 -z-10 sm:mt-12'
-        style={{ backgroundImage: 'url("/home_background.svg")' }}
-      ></div>
-
-      <main className='p-5 mx-auto mt-24 text-center bg-white/30 backdrop-blur-sm rounded-xl w-fit'>
-        <h1 className='text-5xl font-black'>No Crocodile Tears</h1>
-        <h2 className='mt-5 text-xl font-semibold'>
-          Innovative software solutions to power the next-generation of
-          healthcare.
-        </h2>
-
-        <Link href='/solutions'>
-          <button className='mt-5 outline outline-2 text-xl p-2 text-white rounded-md bg-gradient-to-br from-[#97E368] to-[#73BC47] w-fit font-bold'>
-            See our Solutions
-          </button>
-        </Link>
-      </main>
+      <video
+        src='/gator_background_video.mp4'
+        muted
+        autoPlay
+        loop
+        className='object-cover h-full'
+        onContextMenu={() => false}
+      />
     </>
   )
 }
