@@ -1,101 +1,76 @@
-import { type FC, useState, useEffect } from 'react'
+import { type FC, useState } from 'react'
 import Link from 'next/link'
-import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/solid'
+import { EllipsisVerticalIcon } from '@heroicons/react/24/solid'
+import { UserIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 const Header: FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    setMobileMenuOpen(false)
-  }, [])
+  const router = useRouter()
 
   return (
-    <header className='z-40 overflow-visible motion-safe:transition-all backdrop-blur-sm bg-opacity-[50%] sticky top-0 left-0 right-0 transform-cpu w-full p-2'>
-      <div className='grid items-center justify-between max-w-5xl grid-flow-col mx-auto sm:border-b-[1px] border-black/5 backdrop-blur pb-4'>
-        <div className='flex'>
-          <Link href='/'>
-            <Image
-              src='/Alligator2.png'
-              height={25}
-              width={25}
-              onClick={() => setMobileMenuOpen(false)}
-              className='cursor-pointer'
-            />
-          </Link>
-          <nav className='hidden ml-4 sm:block'>
-            <ul className='flex space-x-4'>
-              <li>
-                <Link href='/solutions'>Solutions</Link>
-              </li>
-              <li>
-                <Link href='/mission'>Mission</Link>
-              </li>
-              <li>
-                <Link href='/team'>Team</Link>
-              </li>
-              <li>
-                <Link href='/careers'>Careers</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <Link href='/contact'>
-          <button className='hidden sm:block px-2 text-white rounded-md bg-gradient-to-br from-[#97E368] to-[#73BC47] w-fit font-bold'>
-            Contact
-          </button>
+    <header className='fixed top-0 z-10 flex items-center justify-between w-full p-4 bg-black'>
+      <nav onClick={() => console.log('click')}>
+        <Link href='/'>
+          <Image src='/Alligator2.png' height={30} width={30} alt='logo' />
         </Link>
+      </nav>
 
-        {/* hamburger menu */}
-        <div className='sm:hidden'>
-          {!mobileMenuOpen ? (
-            <Bars2Icon
-              className='w-5 h-5'
-              onClick={() => setMobileMenuOpen(true)}
-            />
-          ) : (
-            <XMarkIcon
-              className='w-5 h-5'
-              onClick={() => setMobileMenuOpen(false)}
-            />
-          )}
-        </div>
-      </div>
-
-      {/* mobile nav */}
-      <nav
-        className={`${
-          mobileMenuOpen ? 'block' : 'hidden'
-        } sm:hidden border-t-2 mt-4 pt-2`}
-      >
-        <ul className='ml-2 space-y-2'>
-          <li>
-            <Link href='/solutions'>
-              <a onClick={() => setMobileMenuOpen(false)}>Solutions</a>
+      <nav className='font-bold group'>
+        <ul className='flex'>
+          <li
+            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!font-bold hover:!opacity-100 
+              ${
+                router.pathname === '/mission'
+                  ? 'font-bold'
+                  : 'opacity-50 font-normal'
+              }`}
+          >
+            <Link href='/mission' className='px-6 py-4'>
+              Mission
             </Link>
           </li>
-          <li>
-            <Link href='/mission'>
-              <a onClick={() => setMobileMenuOpen(false)}>Mission</a>
+          <li
+            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!font-bold hover:!opacity-100 
+              ${
+                router.pathname === '/story'
+                  ? 'font-bold'
+                  : 'opacity-50 font-normal'
+              }`}
+          >
+            <Link href='/story' className='px-6 py-4'>
+              Story
             </Link>
           </li>
-          <li>
-            <Link href='/team'>
-              <a onClick={() => setMobileMenuOpen(false)}>Team</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/careers'>
-              <a onClick={() => setMobileMenuOpen(false)}>Careers</a>
-            </Link>
-          </li>
-          <li className='px-2 text-white rounded-md bg-gradient-to-br from-[#97E368] to-[#73BC47] w-fit font-bold'>
-            <Link href='/contact'>
-              <a onClick={() => setMobileMenuOpen(false)}>Contact</a>
+          <li
+            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!font-bold hover:!opacity-100 
+              ${
+                router.pathname === '/join'
+                  ? 'font-bold'
+                  : 'opacity-50 font-normal'
+              }`}
+          >
+            <Link href='/join' className='px-6 py-4'>
+              Join
             </Link>
           </li>
         </ul>
+      </nav>
+
+      <nav className='flex items-center group'>
+        <Link
+          href='/login'
+          className='p-1 duration-[150ms] group-hover:opacity-50 hover:!opacity-100'
+        >
+          <UserIcon className='stroke-2 w-7 h-7' />
+        </Link>
+        <div
+          className='p-1 cursor-pointer duration-[150ms] group-hover:opacity-50 hover:!opacity-100'
+          onClick={() => console.log('clicked')}
+        >
+          <EllipsisVerticalIcon className='w-7 h-7' />
+        </div>
       </nav>
     </header>
   )
