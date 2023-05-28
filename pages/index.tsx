@@ -15,11 +15,11 @@ const Home: NextPageWithLayout = () => {
         muted
         autoPlay
         loop
-        className='object-cover h-full'
+        className='z-0 object-cover h-full'
         onContextMenu={() => false}
       />
 
-      <main className='absolute flex flex-col items-center justify-center w-full h-full'>
+      <main className='absolute z-10 flex flex-col items-center justify-center w-full h-full'>
         <h1 className='text-5xl font-bold'>Health Care Helps Everyone</h1>
         <Link
           href='/join'

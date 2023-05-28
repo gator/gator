@@ -6,7 +6,7 @@ const Footer: FC = () => {
   const router = useRouter()
 
   return (
-    <footer className='fixed bottom-0 right-0 mb-5 mr-5 text-sm group'>
+    <footer className='fixed bottom-0 right-0 z-10 mb-5 mr-5 text-sm group'>
       <Link
         href='/privacy-policy'
         className={`p-2 duration-[150ms] group-hover:opacity-50 hover:!opacity-100 
