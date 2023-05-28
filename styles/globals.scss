@@ -6,9 +6,10 @@
 @layer base {
   html {
     font-family: 'Inter', sans-serif;
+    @apply bg-black text-white;
   }
 
-  // main {
-  //   @apply my-10 mx-4 sm:mx-24 md:mx-44 lg:mx-64;
-  // }
+  main {
+    @apply py-24 px-60;
+  }
 }
