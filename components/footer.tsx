@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 const Footer: FC = () => {
   const router = useRouter()
 
-  const darkPaths = ['/privacy-policy', '/terms-of-use']
+  const darkPaths = ['/privacy-policy', '/terms-of-use', '/story', '/login']
 
   return (
     <footer
