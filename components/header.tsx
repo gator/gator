@@ -9,6 +9,8 @@ const Header: FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
 
+  const boldLinkPaths = ['/', '/privacy-policy', '/terms-of-use', '/login']
+
   return (
     <header className='fixed top-0 z-10 flex items-center justify-between w-full px-4 py-2 bg-black'>
       <nav onClick={() => console.log('click')}>
@@ -17,39 +19,45 @@ const Header: FC = () => {
         </Link>
       </nav>
 
-      <nav className='font-bold group'>
+      <nav className='group'>
         <ul className='flex'>
           <li
-            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!font-bold hover:!opacity-100 
+            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!opacity-100 hover:!font-bold 
               ${
-                router.pathname === '/mission'
-                  ? 'font-bold'
-                  : 'opacity-50 font-normal'
-              }`}
+                boldLinkPaths.includes(router.pathname)
+                  ? 'font-bold opacity-100'
+                  : null
+              }
+              ${router.pathname === '/mission' ? 'font-bold' : 'opacity-50'}
+              `}
           >
             <Link href='/mission' className='px-6 py-4'>
               Mission
             </Link>
           </li>
           <li
-            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!font-bold hover:!opacity-100 
+            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!opacity-100 hover:!font-bold 
               ${
-                router.pathname === '/story'
-                  ? 'font-bold'
-                  : 'opacity-50 font-normal'
-              }`}
+                boldLinkPaths.includes(router.pathname)
+                  ? 'font-bold opacity-100'
+                  : null
+              }
+              ${router.pathname === '/story' ? 'font-bold' : 'opacity-50'}
+            `}
           >
             <Link href='/story' className='px-6 py-4'>
               Story
             </Link>
           </li>
           <li
-            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!font-bold hover:!opacity-100 
+            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!opacity-100 hover:!font-bold 
               ${
-                router.pathname === '/join'
-                  ? 'font-bold'
-                  : 'opacity-50 font-normal'
-              }`}
+                boldLinkPaths.includes(router.pathname)
+                  ? 'font-bold opacity-100'
+                  : null
+              }
+              ${router.pathname === '/join' ? 'font-bold' : 'opacity-50'}
+              `}
           >
             <Link href='/join' className='px-6 py-4'>
               Join
