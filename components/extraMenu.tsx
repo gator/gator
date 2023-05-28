@@ -10,11 +10,25 @@ interface ExtraMenuProps {
 const ExtraMenu: FC<ExtraMenuProps> = ({ showExtraMenu }) => {
   return (
     <div
-      className={`fixed flex bg-black border-[1px] mx-8 rounded-full px-4 py-2 items-center duration-200 top-0 right-0 z-20
-      ${showExtraMenu && 'translate-y-14'}
+      className={`fixed flex bg-black border-[1px] mx-8 rounded-full px-4 py-2 items-center duration-200 -top-2 right-0 z-20
+      ${showExtraMenu && 'translate-y-16'}
     `}
     >
-      <p className='mr-24 text-xs'>&copy; Gator, LLC All rights reserved.</p>
+      <div>
+        <p className='mr-24 text-xs'>&copy; Gator, LLC All rights reserved.</p>
+        <nav>
+          <ul>
+            <li>
+              <Link
+                href='/careers'
+                className='text-xs duration-100 opacity-50 hover:opacity-100'
+              >
+                Careers
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       <nav>
         <ul className='flex space-x-4'>
