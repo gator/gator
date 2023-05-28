@@ -19,7 +19,7 @@ const Header: FC = () => {
         <div className='relative z-30 flex items-center justify-between'>
           <nav onClick={() => console.log('click')}>
             <Link href='/'>
-              <Image src='/Alligator2.png' height={30} width={30} alt='logo' />
+              <Image src='/gator_logo.png' height={30} width={30} alt='logo' />
             </Link>
           </nav>
 
