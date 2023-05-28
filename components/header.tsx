@@ -15,16 +15,16 @@ const Header: FC = () => {
 
   return (
     <>
-      <header className='fixed top-0 z-30 w-full px-4 py-2 bg-black'>
+      <header className='fixed top-0 z-30 w-full px-4 py-1 bg-black'>
         <div className='relative z-30 flex items-center justify-between'>
-          <nav onClick={() => console.log('click')}>
-            <Link href='/'>
+          <nav className='flex w-1/3'>
+            <Link href='/' className='p-2'>
               <Image src='/gator_logo.png' height={30} width={30} alt='logo' />
             </Link>
           </nav>
 
-          <nav className='group'>
-            <ul className='flex'>
+          <nav className='w-1/3 group'>
+            <ul className='flex justify-center'>
               <li
                 className={`duration-[150ms] font-bold group-hover:opacity-50 hover:!opacity-100
               ${
@@ -67,7 +67,7 @@ const Header: FC = () => {
             </ul>
           </nav>
 
-          <nav className='flex items-center group'>
+          <nav className='flex items-center justify-end float-right w-1/3 group'>
             <Link
               href='/login'
               className='p-1 duration-[150ms] group-hover:opacity-50 hover:!opacity-100'
