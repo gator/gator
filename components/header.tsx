@@ -22,27 +22,25 @@ const Header: FC = () => {
       <nav className='group'>
         <ul className='flex'>
           <li
-            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!opacity-100 hover:!font-bold 
+            className={`duration-[150ms] font-bold group-hover:opacity-50 hover:!opacity-100
               ${
-                boldLinkPaths.includes(router.pathname)
-                  ? 'font-bold opacity-100'
-                  : null
+                router.pathname !== '/mission' &&
+                !boldLinkPaths.includes(router.pathname) &&
+                'opacity-50'
               }
-              ${router.pathname === '/mission' ? 'font-bold' : 'opacity-50'}
-              `}
+            `}
           >
             <Link href='/mission' className='px-6 py-4'>
               Mission
             </Link>
           </li>
           <li
-            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!opacity-100 hover:!font-bold 
+            className={`duration-[150ms] font-bold group-hover:opacity-50 hover:!opacity-100
               ${
-                boldLinkPaths.includes(router.pathname)
-                  ? 'font-bold opacity-100'
-                  : null
+                router.pathname !== '/story' &&
+                !boldLinkPaths.includes(router.pathname) &&
+                'opacity-50'
               }
-              ${router.pathname === '/story' ? 'font-bold' : 'opacity-50'}
             `}
           >
             <Link href='/story' className='px-6 py-4'>
@@ -50,14 +48,13 @@ const Header: FC = () => {
             </Link>
           </li>
           <li
-            className={`duration-[150ms] group-hover:opacity-50 group-hover:font-normal hover:!opacity-100 hover:!font-bold 
+            className={`duration-[150ms] font-bold group-hover:opacity-50 hover:!opacity-100
               ${
-                boldLinkPaths.includes(router.pathname)
-                  ? 'font-bold opacity-100'
-                  : null
+                router.pathname !== '/join' &&
+                !boldLinkPaths.includes(router.pathname) &&
+                'opacity-50'
               }
-              ${router.pathname === '/join' ? 'font-bold' : 'opacity-50'}
-              `}
+            `}
           >
             <Link href='/join' className='px-6 py-4'>
               Join
