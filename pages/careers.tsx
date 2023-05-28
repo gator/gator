@@ -2,6 +2,7 @@ import { type ReactElement, useState } from 'react'
 import type { NextPageWithLayout } from './_app'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { motion } from 'framer-motion'
 
 const Careers: NextPageWithLayout = () => {
   const [submitting, setSubmitting] = useState(false)
@@ -35,10 +36,14 @@ const Careers: NextPageWithLayout = () => {
       <SEO title='Careers - Gator' />
 
       <main className='flex flex-col'>
-        <h1 className='text-2xl font-black text-center'>Careers</h1>
-        <hr className='w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10' />
-
-        <p className='italic text-center'>No current openings</p>
+        <motion.h1
+          className='mt-40 text-6xl font-black'
+          initial={{ translateX: -15 }}
+          animate={{ translateX: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Careers
+        </motion.h1>
 
         <div className='mt-28'>
           <h2 className='font-bold text-center'>Form of interest</h2>
@@ -63,13 +68,13 @@ const Careers: NextPageWithLayout = () => {
                       type='text'
                       name='first_name'
                       id='first_name'
-                      className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
+                      className='block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
                       placeholder=' '
                       required
                     />
                     <label
                       htmlFor='first_name'
-                      className='peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+                      className='peer-focus:font-medium absolute text-sm text-white/50 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
                     >
                       First name
                     </label>
@@ -79,13 +84,13 @@ const Careers: NextPageWithLayout = () => {
                       type='text'
                       name='last_name'
                       id='last_name'
-                      className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
+                      className='block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
                       placeholder=' '
                       required
                     />
                     <label
                       htmlFor='last_name'
-                      className='peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+                      className='peer-focus:font-medium absolute text-sm text-white/50 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
                     >
                       Last name
                     </label>
@@ -98,13 +103,13 @@ const Careers: NextPageWithLayout = () => {
                       pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
                       name='phone'
                       id='phone'
-                      className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
+                      className='block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
                       placeholder=' '
                       required
                     />
                     <label
                       htmlFor='phone'
-                      className='peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+                      className='peer-focus:font-medium absolute text-sm text-white/50 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
                     >
                       Phone number (123-456-7890)
                     </label>
@@ -114,13 +119,13 @@ const Careers: NextPageWithLayout = () => {
                       type='email'
                       name='email'
                       id='email'
-                      className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
+                      className='block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
                       placeholder=' '
                       required
                     />
                     <label
                       htmlFor='email'
-                      className='peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+                      className='peer-focus:font-medium absolute text-sm text-white/50 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
                     >
                       Email address
                     </label>
@@ -131,13 +136,13 @@ const Careers: NextPageWithLayout = () => {
                     type='text'
                     name='interest'
                     id='interest'
-                    className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
+                    className='block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
                     placeholder=' '
                     required
                   />
                   <label
                     htmlFor='interest'
-                    className='peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+                    className='peer-focus:font-medium absolute text-sm text-white/50 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
                   >
                     Area of interest
                   </label>
@@ -147,13 +152,13 @@ const Careers: NextPageWithLayout = () => {
                     type='text'
                     name='portfolio'
                     id='portfolio'
-                    className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
+                    className='block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer'
                     placeholder=' '
                     required
                   />
                   <label
                     htmlFor='portfolio'
-                    className='peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+                    className='peer-focus:font-medium absolute text-sm text-white/50 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
                   >
                     Portfolio (e.g. personal website, Resumé, GitHub, etc.)
                   </label>
