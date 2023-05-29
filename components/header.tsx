@@ -181,6 +181,14 @@ const MobileHeader: FC = () => {
             <ul className='flex justify-end space-x-4 text-sm'>
               <li>
                 <Link
+                  href='/careers'
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link
                   href='/privacy-policy'
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
