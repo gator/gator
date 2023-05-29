@@ -10,7 +10,7 @@ interface ExtraMenuProps {
 const ExtraMenu: FC<ExtraMenuProps> = ({ showExtraMenu }) => {
   return (
     <div
-      className={`fixed flex bg-black border-[1px] mx-8 rounded-full px-4 py-2 items-center duration-200 -top-2 right-0 z-20
+      className={`fixed bg-black border-[1px] mx-8 rounded-full px-4 py-2 items-center duration-200 -top-2 right-0 z-20 hidden sm:flex
       ${showExtraMenu && 'translate-y-16'}
     `}
     >
