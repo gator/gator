@@ -13,7 +13,7 @@ const Story: NextPageWithLayout = () => {
       <img
         src='/story_background.jpg'
         alt='story_background'
-        className='absolute top-0 object-cover w-full h-full'
+        className='fixed top-0 object-cover w-full h-full'
       />
 
       <main className='z-10 h-full'>
