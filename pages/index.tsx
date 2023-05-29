@@ -20,7 +20,9 @@ const Home: NextPageWithLayout = () => {
       />
 
       <main className='absolute z-10 flex flex-col items-center justify-center w-full h-full'>
-        <h1 className='text-5xl font-bold'>Health Care Helps Everyone.</h1>
+        <h1 className='text-5xl font-bold text-center'>
+          Health Care Helps Everyone.
+        </h1>
         <Link
           href='/join'
           className='flex items-center gap-1 px-6 py-4 mt-5 text-2xl group'
