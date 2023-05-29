@@ -9,7 +9,7 @@ const Footer: FC = () => {
 
   return (
     <footer
-      className={`fixed bottom-0 right-0 z-10 mb-5 mr-5 text-sm group 
+      className={`fixed bottom-0 right-0 z-10 mb-5 mr-5 text-sm group hidden sm:block
         ${darkPaths.includes(router.pathname) && 'text-black'}
       `}
     >
