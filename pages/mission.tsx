@@ -15,9 +15,9 @@ const Mission: NextPageWithLayout = () => {
         className='absolute top-0 object-cover h-full'
       />
 
-      <main className='z-10 flex flex-col justify-center h-full text-center top-1/2'>
+      <main className='z-10 flex flex-col h-full text-center sm:justify-center'>
         <motion.h1
-          className='text-6xl font-black tracking-wider mb-14'
+          className='mt-32 text-6xl font-black tracking-wider mb-14 sm:mt-0'
           initial={{ translateY: 10 }}
           animate={{ translateY: 0 }}
           transition={{ duration: 0.5 }}
