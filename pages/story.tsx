@@ -10,13 +10,7 @@ const Story: NextPageWithLayout = () => {
     <>
       <SEO title='Story - Gator' />
 
-      {/* <img
-        src='/mission_background.jpg'
-        alt='mission_background'
-        className='absolute top-0 object-cover h-full'
-      /> */}
-
-      <main className='z-10 h-full text-black bg-white top-1/2'>
+      <main className='text-black bg-white'>
         <motion.h1
           className='mt-40 text-6xl font-black tracking-wider text-center mb-14 md:text-left'
           initial={{ translateY: -10 }}
@@ -25,6 +19,7 @@ const Story: NextPageWithLayout = () => {
         >
           The Story.
         </motion.h1>
+
         <motion.p
           className='text-xl'
           initial={{ translateY: -15 }}
@@ -38,6 +33,7 @@ const Story: NextPageWithLayout = () => {
           completition, he showed many of the workers in the hosptial whom were
           all estatic.
         </motion.p>
+
         <motion.p
           className='mt-4 text-xl'
           initial={{ translateY: -20 }}
@@ -59,6 +55,7 @@ const Story: NextPageWithLayout = () => {
           burnout and one of the major causes is extra administrative work they
           do apart from their direct care to patients.
         </motion.p>
+
         <motion.p
           className='mt-4 text-xl'
           initial={{ translateY: -25 }}
