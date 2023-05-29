@@ -12,7 +12,7 @@ const Mission: NextPageWithLayout = () => {
       <img
         src='/mission_background.jpg'
         alt='mission_background'
-        className='absolute top-0 object-cover h-full'
+        className='absolute top-0 object-cover w-full h-full'
       />
 
       <main className='z-10 flex flex-col h-full text-center sm:justify-center'>
