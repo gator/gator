@@ -37,12 +37,12 @@ const Careers: NextPageWithLayout = () => {
 
       <main className='flex flex-col'>
         <motion.h1
-          className='mt-40 text-6xl font-black'
+          className='mt-40 text-6xl font-black text-center md:text-left'
           initial={{ translateX: -15 }}
           animate={{ translateX: 0 }}
           transition={{ duration: 1 }}
         >
-          Careers
+          Careers.
         </motion.h1>
 
         <div className='mt-28'>
