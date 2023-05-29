@@ -1,103 +1,225 @@
-import { type FC, useState, useEffect } from 'react'
+import { type FC, useState } from 'react'
 import Link from 'next/link'
-import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/solid'
+import { EllipsisVerticalIcon, PlusIcon } from '@heroicons/react/24/solid'
+import { UserIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+import ExtraMenu from './extraMenu'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 
-const Header: FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    setMobileMenuOpen(false)
-  }, [])
+const DesktopHeader: FC = () => {
+  const boldLinkPaths = ['/', '/privacy-policy', '/terms-of-use', '/login']
+  const [showExtraMenu, setShowExtraMenu] = useState(false)
+  const router = useRouter()
 
   return (
-    <header className='z-40 overflow-visible motion-safe:transition-all backdrop-blur-sm bg-opacity-[50%] sticky top-0 left-0 right-0 transform-cpu w-full p-2'>
-      <div className='grid items-center justify-between max-w-5xl grid-flow-col mx-auto sm:border-b-[1px] border-black/5 backdrop-blur pb-4'>
-        <div className='flex'>
-          <Link href='/'>
-            <Image
-              src='/Alligator2.png'
-              height={25}
-              width={25}
-              onClick={() => setMobileMenuOpen(false)}
-              className='cursor-pointer'
-            />
-          </Link>
-          <nav className='hidden ml-4 sm:block'>
-            <ul className='flex space-x-4'>
-              <li>
-                <Link href='/solutions'>Solutions</Link>
+    <>
+      <header className='fixed top-0 z-30 hidden w-full px-4 py-1 bg-black sm:block'>
+        <div className='relative z-30 flex items-center justify-between'>
+          <nav className='flex w-1/3'>
+            <Link href='/' className='p-2'>
+              <Image src='/gator_logo.png' height={30} width={30} alt='logo' />
+            </Link>
+          </nav>
+
+          <nav className='w-1/3 group'>
+            <ul className='flex justify-center'>
+              <li
+                className={`duration-[150ms] font-bold group-hover:opacity-50 hover:!opacity-100
+              ${
+                router.pathname !== '/mission' &&
+                !boldLinkPaths.includes(router.pathname) &&
+                'opacity-50'
+              }
+            `}
+              >
+                <Link href='/mission' className='px-6 py-4'>
+                  Mission
+                </Link>
               </li>
-              <li>
-                <Link href='/mission'>Mission</Link>
+              <li
+                className={`duration-[150ms] font-bold group-hover:opacity-50 hover:!opacity-100
+              ${
+                router.pathname !== '/story' &&
+                !boldLinkPaths.includes(router.pathname) &&
+                'opacity-50'
+              }
+            `}
+              >
+                <Link href='/story' className='px-6 py-4'>
+                  Story
+                </Link>
               </li>
-              <li>
-                <Link href='/team'>Team</Link>
-              </li>
-              <li>
-                <Link href='/careers'>Careers</Link>
+              <li
+                className={`duration-[150ms] font-bold group-hover:opacity-50 hover:!opacity-100
+              ${
+                router.pathname !== '/join' &&
+                !boldLinkPaths.includes(router.pathname) &&
+                'opacity-50'
+              }
+            `}
+              >
+                <Link href='/join' className='px-6 py-4'>
+                  Join
+                </Link>
               </li>
             </ul>
           </nav>
+
+          <nav className='flex items-center justify-end float-right w-1/3 group'>
+            <Link
+              href='/login'
+              className='p-1 duration-[150ms] group-hover:opacity-50 hover:!opacity-100'
+            >
+              <UserIcon className='stroke-2 w-7 h-7' />
+            </Link>
+            <div
+              className='p-1 cursor-pointer duration-[150ms] group-hover:opacity-50 hover:!opacity-100'
+              onClick={() => setShowExtraMenu(!showExtraMenu)}
+            >
+              <EllipsisVerticalIcon className='w-7 h-7' />
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <ExtraMenu showExtraMenu={showExtraMenu} />
+    </>
+  )
+}
+
+const MobileHeader: FC = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  return (
+    <>
+      <header className='z-30 block px-2 bg-black sm:hidden'>
+        <div className='relative z-30 flex items-center justify-between'>
+          <nav className='flex'>
+            <Link href='/' className='p-2'>
+              <Image src='/gator_logo.png' height={30} width={30} alt='logo' />
+            </Link>
+          </nav>
+
+          <div className='flex items-center space-x-2'>
+            <Link
+              href='/login'
+              className='p-1 duration-[150ms] group-hover:opacity-50 hover:!opacity-100'
+            >
+              <UserIcon className='stroke-2 w-7 h-7' />
+            </Link>
+            <PlusIcon
+              className={`w-7 h-7 cursor-pointer duration-200 ${
+                mobileMenuOpen && 'rotate-45'
+              }`}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            />
+          </div>
         </div>
 
-        <Link href='/contact'>
-          <button className='hidden sm:block px-2 text-white rounded-md bg-gradient-to-br from-[#97E368] to-[#73BC47] w-fit font-bold'>
-            Contact
-          </button>
-        </Link>
+        <nav
+          className={`fixed bg-black left-0 right-0 top-0 pt-[2.9rem] bottom-0 z-20 justify-end text-right ${
+            mobileMenuOpen ? 'flex' : 'hidden'
+          }`}
+        >
+          <ul className='flex flex-col h-full mt-10 mr-10 space-y-4'>
+            <li className='text-4xl font-bold'>
+              <Link
+                href='/mission'
+                className='p-2'
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Mission
+              </Link>
+            </li>
+            <li className='text-4xl font-bold'>
+              <Link
+                href='/story'
+                className='p-2'
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                Story
+              </Link>
+            </li>
+            <li className='text-4xl font-bold'>
+              <Link
+                href='/join'
+                className='p-2'
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                Join
+              </Link>
+            </li>
 
-        {/* hamburger menu */}
-        <div className='sm:hidden'>
-          {!mobileMenuOpen ? (
-            <Bars2Icon
-              className='w-5 h-5'
-              onClick={() => setMobileMenuOpen(true)}
-            />
-          ) : (
-            <XMarkIcon
-              className='w-5 h-5'
-              onClick={() => setMobileMenuOpen(false)}
-            />
-          )}
-        </div>
-      </div>
+            <li className='mt-20 space-x-2 text-white'></li>
+          </ul>
+        </nav>
 
-      {/* mobile nav */}
-      <nav
-        className={`${
-          mobileMenuOpen ? 'block' : 'hidden'
-        } sm:hidden border-t-2 mt-4 pt-2`}
-      >
-        <ul className='ml-2 space-y-2'>
-          <li>
-            <Link href='/solutions'>
-              <a onClick={() => setMobileMenuOpen(false)}>Solutions</a>
+        <nav
+          className={`fixed z-30 bottom-0 right-0 text-right p-2 space-y-2 ${
+            mobileMenuOpen ? 'block' : 'hidden'
+          }`}
+        >
+          <div className='space-x-4'>
+            <Link
+              href='https://www.linkedin.com/company/gator'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              <FontAwesomeIcon icon={faLinkedin} size='lg' color='white' />
             </Link>
-          </li>
-          <li>
-            <Link href='/mission'>
-              <a onClick={() => setMobileMenuOpen(false)}>Mission</a>
+            <Link
+              href='https://github.com/gator'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              <FontAwesomeIcon icon={faGithub} size='lg' color='white' />
             </Link>
-          </li>
-          <li>
-            <Link href='/team'>
-              <a onClick={() => setMobileMenuOpen(false)}>Team</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/careers'>
-              <a onClick={() => setMobileMenuOpen(false)}>Careers</a>
-            </Link>
-          </li>
-          <li className='px-2 text-white rounded-md bg-gradient-to-br from-[#97E368] to-[#73BC47] w-fit font-bold'>
-            <Link href='/contact'>
-              <a onClick={() => setMobileMenuOpen(false)}>Contact</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+          </div>
+          <div>
+            <ul className='flex justify-end space-x-4 text-sm'>
+              <li>
+                <Link
+                  href='/careers'
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='/privacy-policy'
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                  Privacy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='/terms-of-use'
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                  Terms
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className='text-sm'>
+            <p>&copy; Gator, LLC All rights reserved.</p>
+          </div>
+        </nav>
+      </header>
+    </>
+  )
+}
+
+const Header: FC = () => {
+  return (
+    <>
+      <DesktopHeader />
+      <MobileHeader />
+    </>
   )
 }
 

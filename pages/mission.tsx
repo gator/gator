@@ -2,38 +2,46 @@ import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { motion } from 'framer-motion'
 
 const Mission: NextPageWithLayout = () => {
   return (
     <>
       <SEO title='Mission - Gator' />
 
-      <main className='text-center'>
-        <h1 className='text-2xl font-black text-center'>Mission</h1>
-        <hr className='w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10' />
+      <img
+        src='/mission_background.jpg'
+        alt='mission_background'
+        className='absolute top-0 object-cover h-full'
+      />
 
-        <p>
-          Gator is dedicated to advancing healthcare technology through
-          innovative software solutions. Our cutting-edge products empower
-          healthcare professionals and organizations to streamline their
-          operations, enhance patient care, and achieve better outcomes. With a
-          deep understanding of the unique challenges and opportunities in the
-          healthcare industry, we develop software that is tailored to the needs
-          of our clients. Our team of experienced developers, designers, and
-          healthcare experts work collaboratively to create intuitive, reliable,
-          and scalable software that drives the evolution of the healthcare
-          ecosystem. Whether you're looking to improve clinical workflows, or
-          enhance patient engagement, Gator has the expertise and technology to
-          help you achieve your goals.
-        </p>
-
-        <h2 className='mt-10 mb-2 text-lg font-bold'>Our Goals</h2>
-        <hr className='w-24 h-1 mx-auto my-4 -translate-y-2 bg-gray-100 border-0 rounded md:my-8' />
-        <ol className='space-y-4 font-bold tracking-wider'>
-          <li>Simplicity.</li>
-          <li>User Friendliness.</li>
-          <li>Reliability.</li>
-        </ol>
+      <main className='z-10 flex flex-col h-full text-center sm:justify-center'>
+        <motion.h1
+          className='mt-32 text-6xl font-black tracking-wider mb-14 sm:mt-0'
+          initial={{ translateY: 10 }}
+          animate={{ translateY: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          The Mission.
+        </motion.h1>
+        <motion.p
+          className='text-xl'
+          initial={{ translateY: 15 }}
+          animate={{ translateY: 0 }}
+          transition={{ duration: 0.75 }}
+        >
+          The best care someone can receive is when the care giver is cared for
+          too. Helping the helpers goes a long way in the success of Health
+          Care.
+        </motion.p>
+        <motion.p
+          className='mt-4 text-xl'
+          initial={{ translateY: 20 }}
+          animate={{ translateY: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Help Everyone.
+        </motion.p>
       </main>
     </>
   )

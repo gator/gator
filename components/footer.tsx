@@ -1,23 +1,36 @@
-import type { FC } from 'react'
-import Image from 'next/image'
+import { type FC } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Footer: FC = () => {
-  return (
-    <footer className='flex flex-col items-center p-2 pt-5 mt-auto space-y-4 text-white bg-black'>
-      <div>
-        <Image alt='Gator Logo' src='/Alligator2.png' width={25} height={25} />
-      </div>
+  const router = useRouter()
 
-      <div className='flex px-2 py-1 space-x-4 bg-white rounded-full w-fit'>
-        <a href='https://github.com/gator' target='_blank'>
-          <span className='sr-only'>GitHub</span>
-          <img src='/github_icon.svg' className='w-5 h-5' />
-        </a>
-        <a href='https://www.linkedin.com/company/gator' target='_blank'>
-          <span className='sr-only'>LinkedIn</span>
-          <img src='/linkedin_icon.svg' className='w-5 h-5' />
-        </a>
-      </div>
+  const darkPaths = ['/privacy-policy', '/terms-of-use', '/story', '/login']
+
+  return (
+    <footer
+      className={`fixed bottom-0 right-0 z-10 mb-5 mr-5 text-sm group hidden sm:block
+        ${darkPaths.includes(router.pathname) && 'text-black'}
+      `}
+    >
+      <Link
+        href='/privacy-policy'
+        className={`p-2 duration-[150ms] group-hover:opacity-50 hover:!opacity-100 
+          ${
+            router.pathname === '/privacy-policy' ? 'opacity-100' : 'opacity-50'
+          }`}
+      >
+        Privacy
+      </Link>
+      <Link
+        href='/terms-of-use'
+        className={`p-2 duration-[150ms] group-hover:opacity-50 hover:!opacity-100 
+          ${
+            router.pathname === '/terms-of-use' ? 'opacity-100' : 'opacity-50'
+          }`}
+      >
+        Terms
+      </Link>
     </footer>
   )
 }

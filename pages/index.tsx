@@ -3,28 +3,32 @@ import type { NextPageWithLayout } from './_app'
 import Link from 'next/link'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { ChevronRightIcon } from '@heroicons/react/24/solid'
 
 const Home: NextPageWithLayout = () => {
   return (
     <>
       <SEO />
 
-      <div
-        className='absolute w-full bg-center bg-repeat h-4/5 -z-10 sm:mt-12'
-        style={{ backgroundImage: 'url("/home_background.svg")' }}
-      ></div>
+      <video
+        src='/gator_background_video.mp4'
+        muted
+        autoPlay
+        loop
+        className='z-0 object-cover h-full'
+        onContextMenu={() => false}
+      />
 
-      <main className='p-5 mx-auto mt-24 text-center bg-white/30 backdrop-blur-sm rounded-xl w-fit'>
-        <h1 className='text-5xl font-black'>No Crocodile Tears</h1>
-        <h2 className='mt-5 text-xl font-semibold'>
-          Innovative software solutions to power the next-generation of
-          healthcare.
-        </h2>
-
-        <Link href='/solutions'>
-          <button className='mt-5 outline outline-2 text-xl p-2 text-white rounded-md bg-gradient-to-br from-[#97E368] to-[#73BC47] w-fit font-bold'>
-            See our Solutions
-          </button>
+      <main className='absolute z-10 flex flex-col items-center justify-center w-full h-full'>
+        <h1 className='text-5xl font-bold text-center'>
+          Health Care Helps Everyone.
+        </h1>
+        <Link
+          href='/join'
+          className='flex items-center gap-1 px-6 py-4 mt-5 text-2xl group'
+        >
+          Start Helping
+          <ChevronRightIcon className='w-6 h-6 duration-100 group-hover:translate-x-1' />
         </Link>
       </main>
     </>
