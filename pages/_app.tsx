@@ -6,6 +6,7 @@ config.autoAddCss = false
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '../styles/globals.scss'
 import { AnimatePresence } from 'framer-motion'
+import { ClerkProvider } from '@clerk/nextjs'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -19,9 +20,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return getLayout(
-    <AnimatePresence mode='wait'>
-      <Component {...pageProps} />
-    </AnimatePresence>
+    <ClerkProvider>
+      <AnimatePresence mode='wait'>
+        <Component {...pageProps} />
+      </AnimatePresence>
+    </ClerkProvider>
   )
 }
 
