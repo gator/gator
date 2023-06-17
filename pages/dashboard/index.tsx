@@ -4,19 +4,21 @@ import DashboardLayout from '../../components/dashboardLayout'
 import SEO from '../../components/seo'
 import { useUser } from '@clerk/nextjs'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/router'
 
 const Dashboard: NextPageWithLayout = () => {
   const { user, isLoaded } = useUser()
+  const router = useRouter()
 
   // In case the user signs out while on the page.
-  if (!isLoaded || !user) {
+  if (!isLoaded) {
     return null
   }
 
   // redirect to login if not logged in
-  if (isLoaded && !user) {
-    redirect('/login')
+  if (!user) {
+    router.push('/login')
+    return null
   }
 
   return (
