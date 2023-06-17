@@ -3,8 +3,20 @@ import type { NextPageWithLayout } from './_app'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { motion } from 'framer-motion'
+import { SignIn, useAuth } from '@clerk/nextjs'
+import { useRouter } from 'next/router'
 
 const Login: NextPageWithLayout = () => {
+  const { isLoaded, isSignedIn } = useAuth()
+  const router = useRouter()
+
+  if (!isLoaded) return null
+
+  if (isSignedIn) {
+    router.push('/dashboard')
+    return null
+  }
+
   return (
     <>
       <SEO title='Login - Gator' />
@@ -18,14 +30,10 @@ const Login: NextPageWithLayout = () => {
         >
           Login.
         </motion.h1>
-        <motion.p
-          className='mt-10 text-xl text-center'
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 100 }}
-          transition={{ duration: 1.5 }}
-        >
-          🏗️ Workin' on it
-        </motion.p>
+
+        <div className='flex justify-center mt-20'>
+          <SignIn afterSignInUrl={'/dashboard'} />
+        </div>
       </main>
     </>
   )
