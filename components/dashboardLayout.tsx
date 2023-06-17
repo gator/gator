@@ -25,7 +25,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
       <header className='fixed top-0 z-30 hidden w-full px-4 py-1 bg-black sm:block'>
         <div className='relative z-30 flex items-center justify-between'>
           <nav className='flex'>
-            <Link href='/' className='p-2'>
+            <Link href='/dashboard' className='p-2'>
               <Image src='/gator_logo.png' height={30} width={30} alt='logo' />
             </Link>
           </nav>
