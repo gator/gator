@@ -45,8 +45,6 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
       </header>
 
       {children}
-
-      <Footer />
     </motion.div>
   )
 }
