@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react'
+import { useEffect, type ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -12,11 +12,15 @@ const Logout: NextPageWithLayout = () => {
 
   signOut().then(() => router.push('/'))
 
+  useEffect(() => {
+    document.body.style.backgroundColor = 'black'
+  }, [])
+
   return (
     <>
       <SEO title='Logout - Gator' />
 
-      <main className='h-full text-black bg-white'>
+      <main className='text-white bg-black'>
         <motion.h1
           className='mt-40 text-6xl font-black text-center md:text-left'
           initial={{ translateX: -15 }}

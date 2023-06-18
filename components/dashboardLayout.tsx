@@ -22,7 +22,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <header className='fixed top-0 z-30 hidden w-full px-4 py-1 bg-black sm:block'>
+      <header className='fixed top-0 z-30 hidden w-full px-4 py-1 text-white bg-black sm:block'>
         <div className='relative z-30 flex items-center justify-between'>
           <nav className='flex'>
             <Link href='/dashboard' className='p-2'>

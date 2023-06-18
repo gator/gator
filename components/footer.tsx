@@ -8,16 +8,14 @@ const Footer: FC = () => {
   const darkPaths = [
     '/privacy-policy',
     '/terms-of-use',
-    '/story',
     '/login',
-    '/logout',
     '/dashboard/scribe'
   ]
 
   return (
     <footer
       className={`fixed bottom-0 right-0 z-10 mb-5 mr-5 text-sm group hidden sm:block
-        ${darkPaths.includes(router.pathname) && 'text-black'}
+        ${darkPaths.includes(router.pathname) ? 'text-black' : 'text-white'}
       `}
     >
       <Link

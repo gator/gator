@@ -1,4 +1,4 @@
-import { type ReactElement, useState } from 'react'
+import { type ReactElement, useState, useEffect } from 'react'
 import type { NextPageWithLayout } from './_app'
 import Head from 'next/head'
 import Layout from '../components/layout'
@@ -31,13 +31,17 @@ const Join: NextPageWithLayout = () => {
     else setSuccess(false)
   }
 
+  useEffect(() => {
+    document.body.style.backgroundColor = 'black'
+  }, [])
+
   return (
     <>
       <Head>
         <title>Join - Gator</title>
       </Head>
 
-      <main>
+      <main className='text-white bg-black'>
         <motion.h1
           className='mt-40 text-6xl font-black text-center md:text-left'
           initial={{ translateX: -15 }}

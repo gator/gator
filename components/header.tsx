@@ -15,7 +15,7 @@ const DesktopHeader: FC = () => {
 
   return (
     <>
-      <header className='fixed top-0 z-30 hidden w-full px-4 py-1 bg-black sm:block'>
+      <header className='fixed top-0 z-30 hidden w-full px-4 py-1 text-white bg-black sm:block'>
         <div className='relative z-30 flex items-center justify-between'>
           <nav className='flex w-1/3'>
             <Link href='/' className='p-2'>
@@ -94,7 +94,7 @@ const MobileHeader: FC = () => {
 
   return (
     <>
-      <header className='z-30 block px-2 bg-black sm:hidden'>
+      <header className='z-30 block px-2 text-white bg-black sm:hidden'>
         <div className='relative z-30 flex items-center justify-between'>
           <nav className='flex'>
             <Link href='/' className='p-2'>

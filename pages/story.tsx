@@ -16,7 +16,7 @@ const Story: NextPageWithLayout = () => {
         className='fixed top-0 object-cover w-full h-full'
       />
 
-      <main className='z-10 h-full'>
+      <main className='z-10 text-white'>
         <motion.h1
           className='mt-40 text-6xl font-black tracking-wider text-center mb-14 md:text-left'
           initial={{ translateY: -10 }}

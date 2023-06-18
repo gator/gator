@@ -24,7 +24,7 @@ const Home: NextPageWithLayout = () => {
         }}
       ></div>
 
-      <main className='absolute z-10 flex flex-col items-center justify-center w-full h-full'>
+      <main className='absolute z-10 flex flex-col items-center justify-center w-full h-full text-white'>
         <h1 className='text-5xl font-bold text-center'>
           Health Care Helps Everyone.
         </h1>
