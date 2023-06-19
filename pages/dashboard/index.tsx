@@ -1,13 +1,12 @@
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from '../_app'
+import { type GetServerSideProps } from 'next'
 import DashboardLayout from '../../components/dashboardLayout'
 import SEO from '../../components/seo'
 import { useUser } from '@clerk/nextjs'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { withServerSideAuth } from '@clerk/nextjs/ssr'
-import type { GetServerSideProps } from 'next'
 
 export const getServerSideProps: GetServerSideProps = withServerSideAuth(
   ({ req }) => {
