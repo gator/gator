@@ -6,21 +6,28 @@ import { useUser } from '@clerk/nextjs'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
+import { withServerSideAuth } from '@clerk/nextjs/ssr'
+import type { GetServerSideProps } from 'next'
+
+export const getServerSideProps: GetServerSideProps = withServerSideAuth(
+  ({ req }) => {
+    const { sessionId } = req.auth
+
+    if (!sessionId) {
+      return {
+        redirect: {
+          destination: '/login',
+          permanent: false
+        }
+      }
+    }
+
+    return { props: {} }
+  }
+)
 
 const Dashboard: NextPageWithLayout = () => {
-  const { user, isLoaded } = useUser()
-  const router = useRouter()
-
-  // In case the user signs out while on the page.
-  if (!isLoaded) {
-    return null
-  }
-
-  // redirect to login if not logged in
-  if (!user) {
-    router.push('/login')
-    return null
-  }
+  const { user } = useUser()
 
   return (
     <>
@@ -33,7 +40,7 @@ const Dashboard: NextPageWithLayout = () => {
           animate={{ translateX: 0 }}
           transition={{ duration: 0.75 }}
         >
-          Hi, {user.firstName}.
+          Hi, {user?.firstName}.
         </motion.h1>
         <motion.h2
           className='mt-10 mb-20 text-xl'
