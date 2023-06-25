@@ -82,7 +82,7 @@ const Scribe: NextPageWithLayout<{ initCases: CaseT[] }> = ({ initCases }) => {
       <SEO title='Scribe - Gator' />
 
       <main>
-        <div className='flex items-center justify-between mx-40'>
+        <div className='flex items-center justify-between mx-10'>
           <div>
             <input
               className='p-2 mr-5 rounded-lg bg-black/5'
@@ -111,7 +111,7 @@ const Scribe: NextPageWithLayout<{ initCases: CaseT[] }> = ({ initCases }) => {
           </div>
         </div>
 
-        <div className='mx-40 mt-10'>
+        <div className='mx-10 mt-10'>
           {refreshing && (
             <div className='flex items-center justify-center mb-10'>
               <div className='w-6 h-6 border-2 border-t-2 border-black rounded-full animate-spin'></div>
@@ -152,7 +152,9 @@ const Scribe: NextPageWithLayout<{ initCases: CaseT[] }> = ({ initCases }) => {
                     </p>
                     <p className='mt-2 text-lg line-clamp-2'>{c.summary}</p>
                   </div>
-                  <ChevronRightIcon className='w-5 h-5 ml-10' rotate={100} />
+                  <div className='ml-10'>
+                    <ChevronRightIcon className='w-5 h-5 ' rotate={100} />
+                  </div>
                 </div>
               </Link>
             ))}
