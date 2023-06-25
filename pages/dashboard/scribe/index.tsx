@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react'
+import { useState, type ReactElement, useRef } from 'react'
 import type { NextPageWithLayout } from '../../_app'
 import DashboardLayout from '../../../components/dashboardLayout'
 import SEO from '../../../components/seo'
@@ -9,6 +9,7 @@ import { ChevronRightIcon } from '@heroicons/react/24/solid'
 import { withServerSideAuth } from '@clerk/nextjs/ssr'
 import { type GetServerSideProps } from 'next'
 import { type CaseT } from '../../../types/case'
+import { useAuth } from '@clerk/nextjs'
 
 export const getServerSideProps: GetServerSideProps = withServerSideAuth(
   async ({ req }) => {
@@ -37,17 +38,45 @@ export const getServerSideProps: GetServerSideProps = withServerSideAuth(
     )
 
     if (!response.ok) {
-      return { props: { cases: [] } }
+      return { props: { initCases: [] } }
     }
 
     const data = await response.json()
 
-    return { props: { cases: data.data } }
+    return { props: { initCases: data.data } }
   },
   { loadUser: true }
 )
 
-const Scribe: NextPageWithLayout<{ cases: CaseT[] }> = ({ cases }) => {
+const Scribe: NextPageWithLayout<{ initCases: CaseT[] }> = ({ initCases }) => {
+  const { sessionId, getToken } = useAuth()
+  const [cases, setCases] = useState<CaseT[]>(initCases)
+  const [refreshing, setRefreshing] = useState(false)
+  const [offset, setOffset] = useState('day')
+  const [search, setSearch] = useState('')
+
+  async function refresh(offset: string) {
+    setOffset(offset)
+    setRefreshing(true)
+    const response = await fetch(`/api/get-cases?offset=${offset}`, {
+      // @ts-ignore
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Token': await getToken(),
+        'X-Session-Id': sessionId
+      }
+    })
+    setRefreshing(false)
+
+    if (!response.ok) {
+      return
+    }
+
+    const data = await response.json()
+
+    setCases(data.data)
+  }
+
   return (
     <>
       <SEO title='Scribe - Gator' />
@@ -58,13 +87,15 @@ const Scribe: NextPageWithLayout<{ cases: CaseT[] }> = ({ cases }) => {
             <input
               className='p-2 mr-5 rounded-lg bg-black/5'
               placeholder='search...'
+              onChange={(e) => setSearch(e.target.value)}
             />
             <select
               className='p-2 rounded-lg cursor-pointer bg-black/5'
-              defaultValue='today'
+              defaultValue={offset}
+              onChange={(e) => refresh(e.target.value)}
             >
-              <option value='today'>Today</option>
-              <option value='3days'>Last 3 Days</option>
+              <option value='day'>Today</option>
+              <option value='3day'>Last 3 Days</option>
               <option value='week'>Last Week</option>
               <option value='month'>Last Month</option>
             </select>
@@ -72,28 +103,50 @@ const Scribe: NextPageWithLayout<{ cases: CaseT[] }> = ({ cases }) => {
           <FontAwesomeIcon
             icon={faRefresh}
             className='w-6 h-6 p-2 rounded-lg cursor-pointer bg-black/5'
+            onClick={() => refresh('day')}
           />
         </div>
 
         <div className='mx-40 mt-10'>
-          {cases.map((c: any, index: number) => (
-            <Link key={c.id} href={`/dashboard/scribe/${c.id}`}>
-              <div
-                className={`${
-                  !(index % 2) && 'bg-black/5'
-                } flex justify-between items-center p-2 hover:scale-105 duration-100`}
-              >
-                <div>
-                  <p className='text-xs'>{c.id}</p>
-                  <p className='text-md'>
-                    {new Date(c.datetime).toLocaleString()}
-                  </p>
-                  <p className='mt-2 text-lg line-clamp-2'>{c.summary}</p>
+          {refreshing && (
+            <div className='flex items-center justify-center mb-10'>
+              <div className='w-6 h-6 border-2 border-t-2 border-black rounded-full animate-spin'></div>
+            </div>
+          )}
+          {cases
+            ?.filter(
+              (c) =>
+                c.keywords.find((k: string) =>
+                  k.toLowerCase().includes(search.toLowerCase())
+                ) ||
+                c.note.toLowerCase().includes(search.toLowerCase()) ||
+                c.rx.find((r: string) =>
+                  r.toLowerCase().includes(search.toLowerCase())
+                ) ||
+                c.summary.toLowerCase().includes(search.toLowerCase()) ||
+                c.transcript
+                  .join(' ')
+                  .toLowerCase()
+                  .includes(search.toLowerCase())
+            )
+            .map((c: any, index: number) => (
+              <Link key={c.id} href={`/dashboard/scribe/${c.id}`}>
+                <div
+                  className={`${
+                    !(index % 2) && 'bg-black/5'
+                  } flex justify-between items-center p-2 hover:scale-105 duration-100`}
+                >
+                  <div>
+                    <p className='text-xs'>{c.id}</p>
+                    <p className='text-md'>
+                      {new Date(c.datetime).toLocaleString()}
+                    </p>
+                    <p className='mt-2 text-lg line-clamp-2'>{c.summary}</p>
+                  </div>
+                  <ChevronRightIcon className='w-5 h-5 ml-10' rotate={100} />
                 </div>
-                <ChevronRightIcon className='w-5 h-5' rotate={100} />
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
         </div>
       </main>
     </>
