@@ -32,7 +32,19 @@ const Login: NextPageWithLayout = () => {
         </motion.h1>
 
         <div className='flex justify-center mt-20'>
-          <SignIn afterSignInUrl={'/dashboard'} />
+          <SignIn
+            afterSignInUrl='/dashboard'
+            appearance={{
+              elements: {
+                footerActionText: {
+                  display: 'none'
+                },
+                footerActionLink: {
+                  display: 'none'
+                }
+              }
+            }}
+          />
         </div>
       </main>
     </>
