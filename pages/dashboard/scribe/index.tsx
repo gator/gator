@@ -100,17 +100,26 @@ const Scribe: NextPageWithLayout<{ initCases: CaseT[] }> = ({ initCases }) => {
               <option value='month'>Last Month</option>
             </select>
           </div>
-          <FontAwesomeIcon
-            icon={faRefresh}
-            className='w-6 h-6 p-2 rounded-lg cursor-pointer bg-black/5'
-            onClick={() => refresh('day')}
-          />
+          <div
+            className='flex items-center justify-center p-2 rounded-lg cursor-pointer bg-black/5'
+            onClick={() => !refreshing && refresh(offset)}
+          >
+            <FontAwesomeIcon
+              icon={refreshing ? faRefresh : faRefresh}
+              className={`w-6 h-6 ${refreshing ? 'animate-spin' : ''}`}
+            />
+          </div>
         </div>
 
         <div className='mx-40 mt-10'>
           {refreshing && (
             <div className='flex items-center justify-center mb-10'>
               <div className='w-6 h-6 border-2 border-t-2 border-black rounded-full animate-spin'></div>
+            </div>
+          )}
+          {cases?.length === 0 && (
+            <div className='flex items-center justify-center mb-10'>
+              <p className='text-2xl'>No cases found</p>
             </div>
           )}
           {cases
