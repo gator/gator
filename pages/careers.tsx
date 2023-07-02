@@ -35,7 +35,7 @@ const Careers: NextPageWithLayout = () => {
     <>
       <SEO title='Careers - Gator' />
 
-      <main className='flex flex-col'>
+      <main className='flex flex-col text-white'>
         <motion.h1
           className='mt-40 text-6xl font-black text-center md:text-left'
           initial={{ translateX: -15 }}
