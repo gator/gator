@@ -10,19 +10,20 @@ const Home: NextPageWithLayout = () => {
     <>
       <SEO />
 
-      <div
-        className='z-0 h-full'
-        dangerouslySetInnerHTML={{
-          __html: `
+      <div className='z-0 h-full'>
         <video
           src='/gator_background_video.mp4'
           muted
           autoPlay
           loop
-          style='min-height: 100%; width: auto; object-fit: cover; z-index: 0;'
-        />`
-        }}
-      ></div>
+          style={{
+            minHeight: '100%',
+            width: 'auto',
+            objectFit: 'cover',
+            zIndex: 0
+          }}
+        />
+      </div>
 
       <main className='absolute z-10 flex flex-col items-center justify-center w-full h-full text-white'>
         <h1 className='text-5xl font-bold text-center'>
