@@ -125,14 +125,14 @@ const Scribe: NextPageWithLayout<{ initCases: CaseT[] }> = ({ initCases }) => {
           {cases
             ?.filter(
               (c) =>
-                c.keywords.find((k: string) =>
+                c.keywords?.find((k: string) =>
                   k.toLowerCase().includes(search.toLowerCase())
                 ) ||
-                c.note.toLowerCase().includes(search.toLowerCase()) ||
-                c.rx.find((r: string) =>
+                c.note?.toLowerCase().includes(search.toLowerCase()) ||
+                c.rx?.find((r: string) =>
                   r.toLowerCase().includes(search.toLowerCase())
                 ) ||
-                c.summary.toLowerCase().includes(search.toLowerCase()) ||
+                c.summary?.toLowerCase().includes(search.toLowerCase()) ||
                 c.transcript
                   .join(' ')
                   .toLowerCase()
