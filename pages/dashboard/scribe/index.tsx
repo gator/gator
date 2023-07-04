@@ -1,4 +1,4 @@
-import { useState, type ReactElement, useRef } from 'react'
+import { useState, type ReactElement } from 'react'
 import type { NextPageWithLayout } from '../../_app'
 import DashboardLayout from '../../../components/dashboardLayout'
 import SEO from '../../../components/seo'
