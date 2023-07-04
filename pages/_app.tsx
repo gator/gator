@@ -7,6 +7,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import '../styles/globals.scss'
 import { AnimatePresence } from 'framer-motion'
 import { ClerkProvider } from '@clerk/nextjs'
+import NextNProgress from 'nextjs-progressbar'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return getLayout(
     <ClerkProvider>
+      <NextNProgress options={{ showSpinner: false }} />
       <AnimatePresence mode='wait'>
         <Component {...pageProps} />
       </AnimatePresence>
