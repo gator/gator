@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return getLayout(
     <ClerkProvider>
-      <NextNProgress options={{ showSpinner: false }} />
+      <NextNProgress options={{ showSpinner: false }} color='#6cba47' />
       <AnimatePresence mode='wait'>
         <Component {...pageProps} />
       </AnimatePresence>
