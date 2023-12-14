@@ -5,7 +5,6 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 config.autoAddCss = false
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '../styles/globals.scss'
-import { AnimatePresence } from 'framer-motion'
 import { ClerkProvider } from '@clerk/nextjs'
 import NextNProgress from 'nextjs-progressbar'
 
@@ -22,10 +21,8 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return getLayout(
     <ClerkProvider>
-      <NextNProgress options={{ showSpinner: false }} color='#6cba47' />
-      <AnimatePresence mode='wait'>
-        <Component {...pageProps} />
-      </AnimatePresence>
+      <NextNProgress options={{ showSpinner: false }} color='#81c531' />
+      <Component {...pageProps} />
     </ClerkProvider>
   )
 }
