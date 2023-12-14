@@ -20,13 +20,12 @@
     "@googleapis/sheets": "^4.0.1",
     "@heroicons/react": "^2.0.12",
     "@tailwindcss/line-clamp": "^0.4.4",
-    "framer-motion": "^10.12.16",
+    "framer-motion": "^10.16.16",
     "next": "^13.4.4",
     "next-seo": "^5.15.0",
     "nextjs-progressbar": "^0.0.16",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scroll-parallax": "^3.2.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.2.5",
