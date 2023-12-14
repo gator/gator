@@ -17,6 +17,10 @@
     @apply px-4 py-24 sm:px-24 md:px-44 lg:px-64;
   }
 
+  ul {
+    @apply list-none;
+  }
+
   // https://stackoverflow.com/questions/7117073/add-a-tooltip-to-a-div
   [data-tooltip]::before {
     /* needed - do not touch */
