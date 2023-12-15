@@ -8,7 +8,7 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const DesktopHeader: FC = () => {
   return (
-    <header className='items-center justify-between hidden px-10 pt-8 sm:flex'>
+    <header className='items-center justify-between hidden px-10 pt-8 sm:flex bg-[#E5FFEA]'>
       <div className='w-full'>
         <Link href='/'>
           <Image
@@ -48,7 +48,7 @@ const MobileHeader: FC = () => {
 
   return (
     <>
-      <header className='z-30 block px-2 sm:hidden'>
+      <header className='z-30 block px-2 sm:hidden bg-[#E5FFEA]'>
         <div className='relative z-30 flex items-center justify-between'>
           <nav className='flex'>
             <Link href='/' className='p-2'>
