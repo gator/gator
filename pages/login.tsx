@@ -21,31 +21,33 @@ const Login: NextPageWithLayout = () => {
     <>
       <SEO title='Login - Gator' />
 
-      <main className='h-full text-black bg-white'>
-        <motion.h1
-          className='mt-40 text-6xl font-black text-center md:text-left'
-          initial={{ translateX: -15 }}
-          animate={{ translateX: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Login.
-        </motion.h1>
+      <main className='mb-40'>
+        <section>
+          <motion.h1
+            className='mt-40 text-6xl font-black text-center md:text-left'
+            initial={{ translateX: -15 }}
+            animate={{ translateX: 0 }}
+            transition={{ duration: 1 }}
+          >
+            Login.
+          </motion.h1>
 
-        <div className='flex justify-center mt-20'>
-          <SignIn
-            afterSignInUrl='/dashboard'
-            appearance={{
-              elements: {
-                footerActionText: {
-                  display: 'none'
-                },
-                footerActionLink: {
-                  display: 'none'
+          <div className='flex justify-center mt-20'>
+            <SignIn
+              afterSignInUrl='/dashboard'
+              appearance={{
+                elements: {
+                  footerActionText: {
+                    display: 'none'
+                  },
+                  footerActionLink: {
+                    display: 'none'
+                  }
                 }
-              }
-            }}
-          />
-        </div>
+              }}
+            />
+          </div>
+        </section>
       </main>
     </>
   )
