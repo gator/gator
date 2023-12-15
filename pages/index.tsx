@@ -13,8 +13,8 @@ const Home: NextPageWithLayout = () => {
       <SEO />
 
       <main>
-        <section className='bg-[url(/images/hero_wiggle.svga)] bg-[#E5FFEA] flex flex-col items-center pt-20 sm:pt-40 pb-20 sm:flex-row sm:items-start sm:justify-center'>
-          <div className='text-center sm:mt-20 sm:text-left'>
+        <section className='bg-[url(/images/hero_wiggle.svga)] bg-[#E5FFEA] flex flex-col items-center pt-20 sm:pt-40 pb-20 sm:flex-row sm:items-center sm:justify-center'>
+          <div className='text-center sm:-mt-20 sm:text-left'>
             <h1 className='text-5xl font-bold'>Meet Ali.</h1>
             <h2 className='max-w-2xl mt-10 text-lg opacity-80 sm:text-left'>
               Ali helps you swim through the murky waters of Healthcare by
@@ -43,7 +43,7 @@ const Home: NextPageWithLayout = () => {
           />
         </section>
 
-        <section className='mt-20 sm:mt-80'>
+        <section className='mt-20 sm:mt-40'>
           <h1 className='mb-20 text-center opacity-50'>Our Partners</h1>
           <div className='flex flex-col items-center space-y-20 justify-evenly sm:flex-row sm:space-y-0'>
             <Link href='https://www.microsoft.com' target='_blank'>
