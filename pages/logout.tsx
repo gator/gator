@@ -12,15 +12,11 @@ const Logout: NextPageWithLayout = () => {
 
   signOut().then(() => router.push('/'))
 
-  useEffect(() => {
-    document.body.style.backgroundColor = 'black'
-  }, [])
-
   return (
     <>
       <SEO title='Logout - Gator' />
 
-      <main className='text-white bg-black'>
+      <main className='mb-40'>
         <motion.h1
           className='mt-40 text-6xl font-black text-center md:text-left'
           initial={{ translateX: -15 }}

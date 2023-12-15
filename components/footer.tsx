@@ -2,10 +2,20 @@ import { type FC } from 'react'
 import Link from 'next/link'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useRouter } from 'next/router'
 
 const Footer: FC = () => {
+  // get route name
+  const router = useRouter()
+  const route = router.pathname
+  const absoluteStyleRoutes = ['/login', '/logout'].includes(route)
+
   return (
-    <footer className='bg-[#34c759] text-white pt-14 pb-24'>
+    <footer
+      className={`bg-[#34c759] text-white pt-14 pb-24 ${
+        absoluteStyleRoutes && 'sm:absolute sm:bottom-0 w-full'
+      }`}
+    >
       <div className='sm:flex'>
         <div className='flex items-start mb-10 sm:flex-col sm:mb-0 sm:w-2/6'>
           <img
