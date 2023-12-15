@@ -83,7 +83,7 @@ const Home: NextPageWithLayout = () => {
                 <span className='text-blue-500'>⎯⎯⎯</span> Walk In
               </p>
               <h2 className='mt-2 mb-8 text-6xl font-bold'>Start Encounter</h2>
-              <p className='opacity-50'>
+              <p className='max-w-xl opacity-50'>
                 Once you have entered the room and greeted the patient, start
                 recording the clinical encounter.
               </p>
@@ -95,7 +95,7 @@ const Home: NextPageWithLayout = () => {
                 <span className='text-blue-500'>⎯⎯⎯</span> Consult Patient
               </p>
               <h2 className='mt-2 mb-8 text-6xl font-bold'>Get Suggestions</h2>
-              <p className='opacity-50'>
+              <p className='max-w-xl opacity-50'>
                 As you are speaking with the patient, periodically get suggested
                 questions to ask the patient and a differential diagnosis
                 relevant to the current context of the conversation.
@@ -118,7 +118,7 @@ const Home: NextPageWithLayout = () => {
                 <span className='text-blue-500'>⎯⎯⎯</span> Sit Back
               </p>
               <h2 className='mt-2 mb-8 text-6xl font-bold'>Relax</h2>
-              <p className='opacity-50'>
+              <p className='max-w-xl opacity-50'>
                 Once you have finished your encounter and stopped recording, Al
                 will have finished creating your note before you are able to sit
                 back down in your office.
@@ -211,10 +211,10 @@ const Home: NextPageWithLayout = () => {
           </p>
         </section>
 
-        <section className='bg-[#34c759] text-white flex sm:flex-row flex-col items-center sm:space-x-40 py-10'>
+        <section className='bg-[#34c759] text-white overflow-x-hidden flex sm:flex-row flex-col items-center sm:-space-x-40 py-10'>
           <div>
-            <h1 className='mb-10 text-5xl font-bold'>Online Dashboard</h1>
-            <p className='text-lg font-light'>
+            <h1 className='mb-10 text-6xl font-bold'>Online Dashboard</h1>
+            <p className='text-2xl font-light'>
               Gator Scribe comes with an online web dashboard where you are able
               to see your recent cases and copy the generated clinical note to
               your EHR. You can use Gator's dashboard to view generated clinical
@@ -236,14 +236,13 @@ const Home: NextPageWithLayout = () => {
           <Image
             src='/images/dashboard_sample.png'
             alt='dashboard'
-            // className='mt-10 overflow-x-hidden w-96 sm:mt-0'
-            className='mt-10 '
+            className='mt-10 sm:translate-x-72 sm:mt-0 sm:h-[50rem] w-auto'
             height={1000}
             width={1000}
           />
         </section>
 
-        <section className='bg-[#e5ffea] pt-32' id='contact'>
+        <section className='bg-[#e5ffea] pt-32 overflow-y-hidden' id='contact'>
           <h1 className='text-5xl font-bold text-center'>Contact</h1>
           <p className='mt-10 text-center opacity-50'>
             If you are interested in licensing or learning more about Gator
@@ -251,6 +250,13 @@ const Home: NextPageWithLayout = () => {
             organization.
           </p>
           <ContactForm />
+          <div className='flex justify-center'>
+            <img
+              src='/images/logos/gator.png'
+              alt='gator'
+              className='translate-y-20 h-60 sm:h-96 sm:translate-y-32'
+            />
+          </div>
         </section>
       </main>
     </>

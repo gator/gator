@@ -6,6 +6,15 @@
 @layer base {
   html {
     font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen;
+
+    #__next {
+      @apply min-h-screen;
+    }
   }
 
   main {
