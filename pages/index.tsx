@@ -44,21 +44,21 @@ const Home: NextPageWithLayout = () => {
         <section className='mt-40 sm:mt-80'>
           <h1 className='mb-20 text-center opacity-50'>Our Partners</h1>
           <div className='flex flex-col items-center space-y-20 justify-evenly sm:flex-row sm:space-y-0'>
-            <Link href='#'>
+            <Link href='https://www.microsoft.com' target='_blank'>
               <img
                 src='/images/logos/microsoft.png'
                 alt='microsoft'
                 className='w-auto h-10'
               />
             </Link>
-            <Link href='#'>
+            <Link href='https://floridahightech.com' target='_blank'>
               <img
                 src='/images/logos/fl_hightech.png'
                 alt='the florida high tech corridor'
                 className='w-auto h-10'
               />
             </Link>
-            <Link href='#'>
+            <Link href='https://cenfluence.com' target='_blank'>
               <img
                 src='/images/logos/cenfluence.png'
                 alt='cenfluence'
