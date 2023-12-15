@@ -245,7 +245,7 @@ const Home: NextPageWithLayout = () => {
 
         <section className='bg-[#e5ffea] pt-32' id='contact'>
           <h1 className='text-5xl font-bold text-center'>Contact</h1>
-          <p className='mt-10 text-center'>
+          <p className='mt-10 text-center opacity-50'>
             If you are interested in licensing or learning more about Gator
             Scribe, fill out the form below and we will reach out to your
             organization.

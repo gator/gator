@@ -9,7 +9,9 @@
   }
 
   main {
-    // @apply;
+    section {
+      @apply px-4;
+    }
   }
 
   ul {
