@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { ChevronRightIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image'
+import ContactForm from '../components/contactForm'
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -119,6 +120,125 @@ const Home: NextPageWithLayout = () => {
               </p>
             </div>
           </div>
+        </section>
+
+        <section className='bg-[#f2f2f7] mt-40 pt-16 pb-32' id='features'>
+          <h1 className='mb-10 text-5xl font-bold text-center'>Features</h1>
+          <div className='flex flex-wrap justify-center gap-4'>
+            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+              <h2 className='mb-4 text-lg font-bold'>Ambient Recognition</h2>
+              <p className='opacity-75'>
+                Gator Scribe listens to your conversation with the patient
+                through your mobile phone for all its functionality.
+              </p>
+            </div>
+            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+              <h2 className='mb-4 text-lg font-bold'>Specialty Agnostic</h2>
+              <p className='opacity-75'>
+                No matter the specialty you practice, Gator Scribe is able to
+                pick up on your orally-directed findings and document them.
+              </p>
+            </div>
+            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+              <h2 className='mb-4 text-lg font-bold'>Multilingual*</h2>
+              <p className='opacity-75'>
+                Have multiple languages be used in the same conversation and
+                still have a documented clinical note in English.
+              </p>
+            </div>
+            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+              <h2 className='mb-4 text-lg font-bold'>
+                Multi-Recording Instances
+              </h2>
+              <p className='opacity-75'>
+                Temporarily pause recording if you need to exit the room (e.g.
+                re-review X-rays) and resume the recording once you are ready to
+                talk with the patient again.
+              </p>
+            </div>
+            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+              <h2 className='mb-4 text-lg font-bold'>
+                HPI Suggested Questions
+              </h2>
+              <p className='opacity-75'>
+                Get suggested questions to ask the patient during the encounter
+                to get a better history based upon the current context.
+              </p>
+            </div>
+            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+              <h2 className='mb-4 text-lg font-bold'>Differential Diagnosis</h2>
+              <p className='opacity-75'>
+                Based upon the current context of the encounter, a differential
+                diagnosis will be supplied.
+              </p>
+            </div>
+            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+              <h2 className='mb-4 text-lg font-bold'>Clinical Note</h2>
+              <p className='opacity-75'>
+                After the encounter has ended, a clinical note with important
+                indications will be created in less than one minute.
+              </p>
+            </div>
+            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+              <h2 className='mb-4 text-lg font-bold'>ICD-10 Charge Codes</h2>
+              <p className='opacity-75'>
+                Suggested ICD-10 Charge Codes that could apply to the encounter
+                will be listed to increase revenue for your institution.
+              </p>
+            </div>
+            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+              <h2 className='mb-4 text-lg font-bold'>Suggested Medication</h2>
+              <p className='opacity-75'>
+                Medication, prescribed or non-prescribed, will be suggested if
+                it applies to the encounter.
+              </p>
+            </div>
+            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+              <h2 className='mb-4 text-lg font-bold'>EHR Integration*</h2>
+              <p className='opacity-75'>
+                Have the clinical notes from the encounters populated into your
+                organization existing EHR for an even more streamlined approach.
+              </p>
+            </div>
+          </div>
+          <p className='mt-10 text-sm text-center opacity-50'>
+            * being worked on
+          </p>
+        </section>
+
+        <section className='bg-[#34c759] text-white flex items-center space-x-40 py-10'>
+          <div>
+            <h1 className='mb-10 text-5xl font-bold'>Online Dashboard</h1>
+            <p className='text-lg font-light'>
+              Gator Scribe comes with an online web dashboard where you are able
+              to see your recent cases and copy the generated clinical note to
+              your EHR. You can use Gator's dashboard to view generated clinical
+              notes or integrate with one of the EHRs below.
+            </p>
+            <div>
+              <img src='/images/epic.png' alt='epic' className='w-auto h-10' />
+              <img
+                src='/images/cerner.png'
+                alt='cerner'
+                className='w-auto h-10'
+              />
+            </div>
+          </div>
+          <img
+            src='/images/dashboard_sample.png'
+            alt='dashboard'
+            className='overflow-x-hidden h-96'
+          />
+        </section>
+
+        <section className='bg-[#e5ffea] pt-32' id='contact'>
+          <h1 className='text-5xl font-bold text-center'>Contact</h1>
+          <p>
+            If you are interested in licensing or learning more about Gator
+            Scribe, fill out the form below and we will reach out to your
+            organization.
+          </p>
+          <ContactForm />
         </section>
       </main>
     </>
