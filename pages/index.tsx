@@ -13,49 +13,54 @@ const Home: NextPageWithLayout = () => {
       <SEO />
 
       <main>
-        <section className='relative bg-[url(/images/hero_wiggle.svga)] bg-[#E5FFEA] h-[75vh]'>
-          <h1>Meet Ali.</h1>
-          <h2>
+        <section className='bg-[url(/images/hero_wiggle.svga)] bg-[#E5FFEA] h-[75vh] flex flex-col items-center pt-20 sm:pt-40'>
+          <h1 className='text-5xl font-bold'>Meet Ali.</h1>
+          <h2 className='max-w-2xl mt-10 text-lg text-center opacity-80'>
             Ali helps you swim through the murky waters of Healthcare by helping
             you document clinical encounters.
           </h2>
-          <div>
-            <Link href='/login'>
-              <button>Start Swimming</button>
+          <div className='flex mt-10 space-x-6 text-sm font-light '>
+            <Link href='/#contact'>
+              <button className='bg-[#34c759] p-2 rounded flex items-center h-12 w-36 text-white'>
+                Start Swimming
+                <ChevronRightIcon className='w-6 h-6 ml-0' />
+              </button>
             </Link>
-            <Link href='/login'>
-              <button>Learn More</button>
+            <Link href='/#how-it-works'>
+              <button className='outline outline-1 -outline-offset-1 outline-[#3b82f6] p-2 rounded h-12 w-36 text-[#3b82f6]'>
+                Learn More
+              </button>
             </Link>
           </div>
           <Image
             src='/images/landing_image.png'
-            width={500}
-            height={500}
+            width={800}
+            height={800}
             alt='landing_image'
-            className='mt-50'
+            className='mt-24 sm:mt-44'
           />
         </section>
 
-        <section className='mt-24'>
+        <section className='mt-40 sm:mt-80'>
           <h1 className='mb-20 text-center opacity-50'>Our Partners</h1>
-          <div className='flex justify-evenly'>
+          <div className='flex flex-col items-center space-y-20 justify-evenly sm:flex-row sm:space-y-0'>
             <Link href='#'>
               <img
-                src='/images/Microsoft_logo_(2012).png'
+                src='/images/logos/microsoft.png'
                 alt='microsoft'
                 className='w-auto h-10'
               />
             </Link>
             <Link href='#'>
               <img
-                src='/images/fl_hightech.png'
+                src='/images/logos/fl_hightech.png'
                 alt='the florida high tech corridor'
                 className='w-auto h-10'
               />
             </Link>
             <Link href='#'>
               <img
-                src='/images/cenfluence.png'
+                src='/images/logos/cenfluence.png'
                 alt='cenfluence'
                 className='w-auto h-10'
               />
@@ -64,10 +69,10 @@ const Home: NextPageWithLayout = () => {
         </section>
 
         <section
-          className='flex flex-col items-center gap-60 mt-60'
+          className='flex flex-col items-center gap-40 sm:gap-60 mt-60'
           id='how-it-works'
         >
-          <div className='flex items-center gap-20'>
+          <div className='flex flex-col items-center gap-3 sm:gap-20 sm:flex-row'>
             <img
               src='/images/how-it-works/start.svg'
               alt='start'
@@ -84,7 +89,7 @@ const Home: NextPageWithLayout = () => {
               </p>
             </div>
           </div>
-          <div className='flex items-center gap-20'>
+          <div className='flex flex-col-reverse items-center gap-3 sm:gap-20 sm:flex-row'>
             <div>
               <p>
                 <span className='text-blue-500'>⎯⎯⎯</span> Consult Patient
@@ -102,7 +107,7 @@ const Home: NextPageWithLayout = () => {
               className='w-auto h-96'
             />
           </div>
-          <div className='flex items-center gap-20'>
+          <div className='flex flex-col items-center gap-3 sm:gap-20 sm:flex-row'>
             <img
               src='/images/how-it-works/relax.svg'
               alt='relax'
@@ -125,28 +130,28 @@ const Home: NextPageWithLayout = () => {
         <section className='bg-[#f2f2f7] mt-40 pt-16 pb-32' id='features'>
           <h1 className='mb-10 text-5xl font-bold text-center'>Features</h1>
           <div className='flex flex-wrap justify-center gap-4'>
-            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
-              <h2 className='mb-4 text-lg font-bold'>Ambient Recognition</h2>
+            <div className='p-4 bg-white rounded-lg shadow w-full sm:max-w-[40%]'>
+              <h2 className='mb-4 font-bold'>Ambient Recognition</h2>
               <p className='opacity-75'>
                 Gator Scribe listens to your conversation with the patient
                 through your mobile phone for all its functionality.
               </p>
             </div>
-            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+            <div className='p-4 bg-white rounded-lg shadow w-full sm:max-w-[40%]'>
               <h2 className='mb-4 text-lg font-bold'>Specialty Agnostic</h2>
               <p className='opacity-75'>
                 No matter the specialty you practice, Gator Scribe is able to
                 pick up on your orally-directed findings and document them.
               </p>
             </div>
-            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+            <div className='p-4 bg-white rounded-lg shadow w-full sm:max-w-[40%]'>
               <h2 className='mb-4 text-lg font-bold'>Multilingual*</h2>
               <p className='opacity-75'>
                 Have multiple languages be used in the same conversation and
                 still have a documented clinical note in English.
               </p>
             </div>
-            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+            <div className='p-4 bg-white rounded-lg shadow w-full sm:max-w-[40%]'>
               <h2 className='mb-4 text-lg font-bold'>
                 Multi-Recording Instances
               </h2>
@@ -156,7 +161,7 @@ const Home: NextPageWithLayout = () => {
                 talk with the patient again.
               </p>
             </div>
-            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+            <div className='p-4 bg-white rounded-lg shadow w-full sm:max-w-[40%]'>
               <h2 className='mb-4 text-lg font-bold'>
                 HPI Suggested Questions
               </h2>
@@ -165,35 +170,35 @@ const Home: NextPageWithLayout = () => {
                 to get a better history based upon the current context.
               </p>
             </div>
-            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+            <div className='p-4 bg-white rounded-lg shadow w-full sm:max-w-[40%]'>
               <h2 className='mb-4 text-lg font-bold'>Differential Diagnosis</h2>
               <p className='opacity-75'>
                 Based upon the current context of the encounter, a differential
                 diagnosis will be supplied.
               </p>
             </div>
-            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+            <div className='p-4 bg-white rounded-lg shadow w-full sm:max-w-[40%]'>
               <h2 className='mb-4 text-lg font-bold'>Clinical Note</h2>
               <p className='opacity-75'>
                 After the encounter has ended, a clinical note with important
                 indications will be created in less than one minute.
               </p>
             </div>
-            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+            <div className='p-4 bg-white rounded-lg shadow w-full sm:max-w-[40%]'>
               <h2 className='mb-4 text-lg font-bold'>ICD-10 Charge Codes</h2>
               <p className='opacity-75'>
                 Suggested ICD-10 Charge Codes that could apply to the encounter
                 will be listed to increase revenue for your institution.
               </p>
             </div>
-            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+            <div className='p-4 bg-white rounded-lg shadow w-full sm:max-w-[40%]'>
               <h2 className='mb-4 text-lg font-bold'>Suggested Medication</h2>
               <p className='opacity-75'>
                 Medication, prescribed or non-prescribed, will be suggested if
                 it applies to the encounter.
               </p>
             </div>
-            <div className='p-4 bg-white rounded-lg shadow max-w-[40%]'>
+            <div className='p-4 bg-white rounded-lg shadow w-full sm:max-w-[40%]'>
               <h2 className='mb-4 text-lg font-bold'>EHR Integration*</h2>
               <p className='opacity-75'>
                 Have the clinical notes from the encounters populated into your
@@ -206,7 +211,7 @@ const Home: NextPageWithLayout = () => {
           </p>
         </section>
 
-        <section className='bg-[#34c759] text-white flex items-center space-x-40 py-10'>
+        <section className='bg-[#34c759] text-white flex sm:flex-row flex-col items-center sm:space-x-40 py-10'>
           <div>
             <h1 className='mb-10 text-5xl font-bold'>Online Dashboard</h1>
             <p className='text-lg font-light'>
@@ -215,25 +220,32 @@ const Home: NextPageWithLayout = () => {
               your EHR. You can use Gator's dashboard to view generated clinical
               notes or integrate with one of the EHRs below.
             </p>
-            <div>
-              <img src='/images/epic.png' alt='epic' className='w-auto h-10' />
+            <div className='flex items-center mt-4 space-x-4'>
               <img
-                src='/images/cerner.png'
-                alt='cerner'
+                src='/images/logos/epic.png'
+                alt='epic'
                 className='w-auto h-10'
+              />
+              <img
+                src='/images/logos/cerner.png'
+                alt='cerner'
+                className='w-auto h-6'
               />
             </div>
           </div>
-          <img
+          <Image
             src='/images/dashboard_sample.png'
             alt='dashboard'
-            className='overflow-x-hidden h-96'
+            // className='mt-10 overflow-x-hidden w-96 sm:mt-0'
+            className='mt-10 '
+            height={1000}
+            width={1000}
           />
         </section>
 
         <section className='bg-[#e5ffea] pt-32' id='contact'>
           <h1 className='text-5xl font-bold text-center'>Contact</h1>
-          <p>
+          <p className='mt-10 text-center'>
             If you are interested in licensing or learning more about Gator
             Scribe, fill out the form below and we will reach out to your
             organization.
