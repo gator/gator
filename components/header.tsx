@@ -8,9 +8,9 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const DesktopHeader: FC = () => {
   return (
-    <header className='items-center pb-10 justify-between hidden px-10 pt-8 sm:flex bg-[#E5FFEA]'>
+    <header className='bg-[url(/images/heroes/wiggle.svg)] items-center pb-10 justify-between hidden px-10 pt-8 sm:flex bg-[#E5FFEA]'>
       <div className='w-full'>
-        <Link href='/'>
+        <Link href='/' className='flex w-fit'>
           <Image
             src='/images/logo_banner.svg'
             width={150}

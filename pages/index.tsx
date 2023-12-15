@@ -13,7 +13,7 @@ const Home: NextPageWithLayout = () => {
       <SEO />
 
       <main>
-        <section className='bg-[url(/images/hero_wiggle.svga)] bg-[#E5FFEA] flex flex-col items-center pt-20 sm:pt-40 pb-20 sm:flex-row sm:items-center sm:justify-center'>
+        <section className='bg-[url(/images/heroes/wiggle.svg)] bg-[#E5FFEA] flex flex-col items-center pt-20 sm:pt-40 pb-20 sm:flex-row sm:items-center sm:justify-center'>
           <div className='text-center sm:-mt-20 sm:text-left'>
             <h1 className='text-5xl font-bold'>Meet Ali.</h1>
             <h2 className='max-w-2xl mt-10 text-lg opacity-80 sm:text-left'>
@@ -129,7 +129,10 @@ const Home: NextPageWithLayout = () => {
           </div>
         </section>
 
-        <section className='bg-[#f2f2f7] mt-40 pt-16 pb-32' id='features'>
+        <section
+          className='bg-[url(/images/heroes/floating-cogs.svg)] bg-[#f2f2f7] mt-40 pt-16 pb-32'
+          id='features'
+        >
           <h1 className='mb-10 text-5xl font-bold text-center'>Features</h1>
           <div className='flex flex-wrap justify-center gap-4'>
             <div className='p-4 bg-white rounded-lg shadow w-full sm:max-w-[40%]'>
@@ -213,7 +216,7 @@ const Home: NextPageWithLayout = () => {
           </p>
         </section>
 
-        <section className='bg-[#34c759] text-white overflow-x-hidden flex sm:flex-row flex-col items-center sm:-space-x-40 py-10'>
+        <section className='bg-[url(/images/heroes/bubbles.svg)] bg-[#34c759] text-white overflow-x-hidden flex sm:flex-row flex-col items-center sm:-space-x-40 py-10'>
           <div>
             <h1 className='mb-10 text-6xl font-bold'>Online Dashboard</h1>
             <p className='text-2xl font-light'>
@@ -244,7 +247,10 @@ const Home: NextPageWithLayout = () => {
           />
         </section>
 
-        <section className='bg-[#e5ffea] pt-32 overflow-y-hidden' id='contact'>
+        <section
+          className='bg-[url(/images/heroes/plus.svg)] bg-[#e5ffea] pt-32 overflow-y-hidden'
+          id='contact'
+        >
           <h1 className='text-5xl font-bold text-center'>Contact</h1>
           <p className='mt-10 text-center opacity-50'>
             If you are interested in licensing or learning more about Gator
