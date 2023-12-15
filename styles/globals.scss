@@ -10,8 +10,12 @@
 
   main {
     section {
-      @apply px-4;
+      @apply px-4 sm:px-20;
     }
+  }
+
+  footer {
+    @apply px-4 sm:px-20;
   }
 
   ul {

@@ -13,7 +13,7 @@ const Home: NextPageWithLayout = () => {
       <SEO />
 
       <main>
-        <section className='bg-[url(/images/hero_wiggle.svga)] bg-[#E5FFEA] h-[75vh] flex flex-col items-center pt-20 sm:pt-40'>
+        <section className='bg-[url(/images/hero_wiggle.svga)] bg-[#E5FFEA] h-[40rem] flex flex-col items-center pt-20 sm:pt-40 sm:h-[70rem]'>
           <h1 className='text-5xl font-bold'>Meet Ali.</h1>
           <h2 className='max-w-2xl mt-10 text-lg text-center opacity-80'>
             Ali helps you swim through the murky waters of Healthcare by helping
@@ -37,7 +37,7 @@ const Home: NextPageWithLayout = () => {
             width={800}
             height={800}
             alt='landing_image'
-            className='mt-24 sm:mt-44'
+            className='mt-24 sm:mt-72'
           />
         </section>
 
