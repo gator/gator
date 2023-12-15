@@ -25,23 +25,56 @@ export const getServerSideProps: GetServerSideProps = withServerSideAuth(
       }
     }
 
-    const response = await fetch(
-      `https://us-east1-animated-bonsai-387322.cloudfunctions.net/get_cases?caseId=${caseId}`,
-      {
-        // @ts-ignore
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Token': await getToken(),
-          'X-Session-Id': sessionId
-        }
+    // const response = await fetch(
+    //   `https://us-east1-animated-bonsai-387322.cloudfunctions.net/get_cases?caseId=${caseId}`,
+    //   {
+    //     // @ts-ignore
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'X-Token': await getToken(),
+    //       'X-Session-Id': sessionId
+    //     }
+    //   }
+    // )
+
+    // if (!response.ok) {
+    //   return { props: { c: [] } }
+    // }
+
+    // const data = await response.json()
+
+    const data = {
+      data: {
+        id: 'sNPC4FXNpzK6OJgWZS2r',
+        differential_diagnosis: [
+          { confidence: 0.6, diagnosis: 'Food poisoning' },
+          { confidence: 0.2, diagnosis: 'Gastroenteritis' },
+          { confidence: 0.1, diagnosis: 'Gastritis' },
+          { confidence: 0.05, diagnosis: 'Viral gastroenteritis' },
+          { confidence: 0.04, diagnosis: 'Gastric ulcer' }
+        ],
+        'icd-10 codes': [
+          {
+            code: 'A05.9',
+            description: 'Bacterial foodborne intoxication, unspecified'
+          }
+        ],
+        keywords: [
+          'stomach pain',
+          'throwing up',
+          'diarrhea',
+          'allergic',
+          'food poisoning',
+          'rest',
+          'bread',
+          'rice',
+          'water',
+          'sugar'
+        ],
+        note: `Chief Complaint: Terrible stomach\nHistory of Present Illness: Patient reports feeling unwell with vomiting since late last night after consuming seafood and pasta dish prepared by their children for their anniversary. No diarrhea present. No known allergies reported\nPast Medical History: Unknown\nFamily History: Unknown\nImaging: Unknown\nPhysical Exam: Unknown\nAssessment: Food poisoning\nPlan: Advise rest and avoid eating for the next 24 hours. After that time, patient can start with bread or rice but should avoid milk or cheese. Advise to drink plenty of water or black tea with sugar. Follow up in two days if condition does not improve. No further appointments required. Advise to visit a restaurant instead for their next anniversary celebration.\n`,
+        rx: []
       }
-    )
-
-    if (!response.ok) {
-      return { props: { c: [] } }
     }
-
-    const data = await response.json()
 
     return { props: { c: data.data } }
   },
@@ -69,11 +102,15 @@ const Case: NextPageWithLayout<{ c: CaseT }> = ({ c }) => {
         <h2 className='mt-10 font-bold'>Note</h2>
         <div className='flex'>
           <div>
-            {c.note.split('\\n').map((line, index) => (
+            {c.note.split('\n').map((line, index) => (
               <p key={index}>
                 {line}
-                <br />
-                <br />
+                {index !== c.note.split('\n').length - 1 && (
+                  <>
+                    <br />
+                    <br />
+                  </>
+                )}
               </p>
             ))}
           </div>
@@ -96,6 +133,14 @@ const Case: NextPageWithLayout<{ c: CaseT }> = ({ c }) => {
         {c.keywords.length === 0 && <p>N/A</p>}
         {c.keywords.map((keyword, index) => (
           <li key={index}>{keyword}</li>
+        ))}
+
+        <h2 className='mt-10 font-bold'>Generated Differential Diagnosis</h2>
+        {c.differential_diagnosis.length === 0 && <p>N/A</p>}
+        {c.differential_diagnosis.map((diagnosis, index) => (
+          <li key={index}>
+            {Number(diagnosis.confidence) * 100}% - {diagnosis.diagnosis}
+          </li>
         ))}
 
         <h2 className='mt-10 font-bold'>Suggested ICD-10 Codes</h2>
