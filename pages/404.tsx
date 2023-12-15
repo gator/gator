@@ -5,9 +5,9 @@ export default function Custom404() {
 
   useEffect(() => {
     // redirect to home page after 5 seconds
-    // setTimeout(() => {
-    //   window.location.href = '/'
-    // }, 5000)
+    setTimeout(() => {
+      window.location.href = '/'
+    }, 5000)
 
     const interval = setInterval(() => {
       setCountDown((prev: number) => prev - 1)
