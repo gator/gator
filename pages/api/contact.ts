@@ -1,60 +1,39 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { auth, sheets } from '@googleapis/sheets'
+import { EmailTemplate } from '../../components/emailTemplate'
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   const {
-    company,
+    organization,
     title,
-    first_name,
-    last_name,
+    name,
     phone,
     email,
-    solutions,
     comments
   } = req.body
 
-  const client = await auth.getClient({
-    credentials: {
-      client_email: process.env.GOOGLE_CLIENT_EMAIL,
-      client_id: process.env.GOOGLE_CLIENT_ID,
-      private_key: (process.env.GOOGLE_PRIVATE_KEY as string).replace(
-        /\\n/g,
-        '\n'
-      )
-    },
-    scopes: ['https://www.googleapis.com/auth/spreadsheets']
-  })
+  try {
+    const data = await resend.emails.send({
+      from: `${name} <hi@gator.sh>`,
+      to: ['vijay.stroup@gator.sh'],
+      subject: `New Contact Form Submission: ${organization}`,
+      react: EmailTemplate({
+        organization,
+        title,
+        _name: name,
+        phone,
+        email,
+        comments
+      }),
+    })
 
-  const sheetsAPI = sheets({
-    version: 'v4',
-    auth: client
-  })
-
-  const response = await sheetsAPI.spreadsheets.values.append({
-    spreadsheetId: process.env.GOOGLE_SPREADSHEET_CONTACT_ID,
-    range: 'A2:I2',
-    valueInputOption: 'USER_ENTERED',
-    requestBody: {
-      values: [
-        [
-          new Date().toUTCString(),
-          company,
-          title,
-          first_name,
-          last_name,
-          phone,
-          email,
-          solutions,
-          comments
-        ]
-      ]
-    }
-  })
-
-  if (response.status !== 200) return res.status(500).end()
-
-  return res.status(200).end()
+    res.status(200).json(data)
+  } catch (error) {
+    res.status(400).json(error)
+  }
 }
