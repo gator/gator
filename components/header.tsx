@@ -10,12 +10,14 @@ const DesktopHeader: FC = () => {
   return (
     <header className='items-center justify-between hidden px-10 pt-8 sm:flex'>
       <div className='w-full'>
-        <Image
-          src='/images/logo_banner.svg'
-          width={150}
-          height={150}
-          alt='logo_banner'
-        />
+        <Link href='/'>
+          <Image
+            src='/images/logo_banner.svg'
+            width={150}
+            height={150}
+            alt='logo_banner'
+          />
+        </Link>
       </div>
       <nav className='flex justify-center w-full'>
         <ul className='flex gap-6 text-sm'>
