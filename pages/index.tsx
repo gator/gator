@@ -13,35 +13,37 @@ const Home: NextPageWithLayout = () => {
       <SEO />
 
       <main>
-        <section className='bg-[url(/images/hero_wiggle.svga)] bg-[#E5FFEA] h-[40rem] flex flex-col items-center pt-20 sm:pt-40 sm:h-[70rem]'>
-          <h1 className='text-5xl font-bold'>Meet Ali.</h1>
-          <h2 className='max-w-2xl mt-10 text-lg text-center opacity-80'>
-            Ali helps you swim through the murky waters of Healthcare by helping
-            you document clinical encounters.
-          </h2>
-          <div className='flex mt-10 space-x-6 text-sm font-light '>
-            <Link href='/#contact'>
-              <button className='bg-[#34c759] p-2 rounded flex items-center h-12 w-36 text-white'>
-                Start Swimming
-                <ChevronRightIcon className='w-6 h-6 ml-0' />
-              </button>
-            </Link>
-            <Link href='/#how-it-works'>
-              <button className='outline outline-1 -outline-offset-1 outline-[#3b82f6] p-2 rounded h-12 w-36 text-[#3b82f6]'>
-                Learn More
-              </button>
-            </Link>
+        <section className='bg-[url(/images/hero_wiggle.svga)] bg-[#E5FFEA] flex flex-col items-center pt-20 sm:pt-40 pb-20 sm:flex-row sm:items-start sm:justify-center'>
+          <div className='text-center sm:mt-20 sm:text-left'>
+            <h1 className='text-5xl font-bold'>Meet Ali.</h1>
+            <h2 className='max-w-2xl mt-10 text-lg opacity-80 sm:text-left'>
+              Ali helps you swim through the murky waters of Healthcare by
+              helping you document clinical encounters.
+            </h2>
+            <div className='flex mt-10 space-x-6 text-sm font-light '>
+              <Link href='/#contact'>
+                <button className='bg-[#34c759] p-2 rounded flex items-center h-12 w-36 text-white'>
+                  Start Swimming
+                  <ChevronRightIcon className='w-6 h-6 ml-0' />
+                </button>
+              </Link>
+              <Link href='/#how-it-works'>
+                <button className='outline outline-1 -outline-offset-1 outline-[#3b82f6] p-2 rounded h-12 w-36 text-[#3b82f6]'>
+                  Learn More
+                </button>
+              </Link>
+            </div>
           </div>
           <Image
             src='/images/landing_image.png'
             width={800}
             height={800}
             alt='landing_image'
-            className='mt-24 sm:mt-72'
+            className='mt-20'
           />
         </section>
 
-        <section className='mt-40 sm:mt-80'>
+        <section className='mt-20 sm:mt-80'>
           <h1 className='mb-20 text-center opacity-50'>Our Partners</h1>
           <div className='flex flex-col items-center space-y-20 justify-evenly sm:flex-row sm:space-y-0'>
             <Link href='https://www.microsoft.com' target='_blank'>
