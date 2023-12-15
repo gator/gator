@@ -20,7 +20,7 @@ export default async function handler(
   try {
     const data = await resend.emails.send({
       from: `${name} <hi@gator.sh>`,
-      to: ['vijay.stroup@gator.sh'],
+      to: ['hi@gator.sh'],
       subject: `New Contact Form Submission: ${organization}`,
       react: EmailTemplate({
         organization,
