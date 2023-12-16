@@ -13,14 +13,14 @@ const Home: NextPageWithLayout = () => {
       <SEO />
 
       <main>
-        <section className='bg-[url(/images/heroes/wiggle.svg)] bg-[#E5FFEA] flex flex-col items-center pt-20 sm:pt-40 pb-20 sm:flex-row sm:items-center sm:justify-center'>
+        <section className='bg-[url(/images/heroes/wiggle.svg)] bg-[#E5FFEA] flex flex-col items-center pt-20 sm:pt-10 pb-20 sm:flex-row sm:items-center sm:justify-center'>
           <div className='text-center sm:-mt-20 sm:text-left'>
             <h1 className='text-5xl font-bold'>Meet Ali.</h1>
             <h2 className='max-w-2xl mt-10 text-lg opacity-80 sm:text-left'>
               Ali helps you swim through the murky waters of Healthcare by
               helping you document clinical encounters.
             </h2>
-            <div className='flex mt-10 space-x-6 text-sm font-light '>
+            <div className='flex justify-center mt-10 space-x-6 text-sm font-light sm:justify-start'>
               <Link href='/#contact'>
                 <button className='bg-[#34c759] p-2 rounded flex items-center h-12 w-36 text-white'>
                   Start Swimming
