@@ -35,18 +35,6 @@ const Footer: FC = () => {
                 className='translate-y-2'
               />
             </Link>
-            <Link
-              href='https://github.com/gator'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              <FontAwesomeIcon
-                icon={faGithub}
-                size='xl'
-                color='white'
-                className='translate-y-2'
-              />
-            </Link>
           </div>
         </div>
 
@@ -76,6 +64,13 @@ const Footer: FC = () => {
               </li>
             </ul>
           </div>
+        </div>
+
+        <div className='mt-10 sm:ml-20 sm:mt-0'>
+          <img
+            src='/images/hipaa_compliant.png'
+            className='w-auto h-14 sm:h-14 sm:rm-0'
+          />
         </div>
       </div>
 
