@@ -75,7 +75,7 @@ const Footer: FC = () => {
       </div>
 
       <p className='mt-20 text-sm text-center opacity-50'>
-        &copy; Gator, LLC All rights reserved.
+        &copy; Gator, All rights reserved.
       </p>
     </footer>
   )
