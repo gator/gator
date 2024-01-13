@@ -1,12 +1,11 @@
-import type { ReactElement } from 'react'
-import type { NextPageWithLayout } from './_app'
-import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { motion } from 'framer-motion'
 import { SignIn, useAuth } from '@clerk/nextjs'
 import { useRouter } from 'next/router'
+import { dark } from '@clerk/themes'
+import Link from 'next/link'
+import Image from 'next/image'
 
-const Login: NextPageWithLayout = () => {
+const Login = () => {
   const { isLoaded, isSignedIn } = useAuth()
   const router = useRouter()
 
@@ -21,40 +20,52 @@ const Login: NextPageWithLayout = () => {
     <>
       <SEO title='Login - Gator' />
 
-      <main className='mb-40'>
-        <section>
-          <motion.h1
-            className='mt-40 text-6xl font-black text-center md:text-left'
-            initial={{ translateX: -15 }}
-            animate={{ translateX: 0 }}
-            transition={{ duration: 1 }}
-          >
-            Login.
-          </motion.h1>
+      <main className='flex h-screen'>
+        <div className='relative w-full overflow-hidden bg-zinc-900'>
+          <h1 className='m-10 text-3xl font-bold text-zinc-500'>GATOR</h1>
 
-          <div className='flex justify-center mt-20'>
-            <SignIn
-              afterSignInUrl='/dashboard'
-              appearance={{
-                elements: {
-                  footerActionText: {
-                    display: 'none'
-                  },
-                  footerActionLink: {
-                    display: 'none'
-                  }
-                }
-              }}
+          <div className='flex justify-center'>
+            <Image
+              src='/images/logos/ali.png'
+              alt='dashboard'
+              className='absolute -bottom-44'
+              height={600}
+              width={600}
             />
           </div>
-        </section>
+        </div>
+        <div className='flex flex-col items-center justify-center w-full bg-zinc-950'>
+          <SignIn
+            appearance={{
+              baseTheme: dark,
+              elements: {
+                footer: {
+                  display: 'none'
+                },
+                logoImage: {
+                  display: 'none'
+                },
+                header: {
+                  transform: 'translateY(-70px)'
+                }
+              }
+            }}
+          />
+          <p className='mt-10 text-xs text-zinc-500'>
+            By logging in, you agree to our{' '}
+            <Link href='/terms-of-use' className='underline'>
+              Terms of Use
+            </Link>{' '}
+            and{' '}
+            <Link href='/privacy-policy' className='underline'>
+              Privacy Policy
+            </Link>
+            .
+          </p>
+        </div>
       </main>
     </>
   )
-}
-
-Login.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>
 }
 
 export default Login
