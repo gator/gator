@@ -12,9 +12,12 @@ const Login = () => {
   if (!isLoaded) return null
 
   if (isSignedIn) {
-    router.push('/dashboard')
+    router.push('/')
     return null
   }
+
+  const redirect =
+    new URLSearchParams(window.location.search).get('redirect') ?? '/'
 
   return (
     <>
@@ -50,6 +53,7 @@ const Login = () => {
                 }
               }
             }}
+            afterSignInUrl={redirect}
           />
           <p className='mt-10 text-xs text-zinc-500'>
             By logging in, you agree to our{' '}
