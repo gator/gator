@@ -14,13 +14,13 @@ const Login = () => {
 
   if (!isLoaded) return null
 
+  const redirect =
+    new URLSearchParams(window.location.search).get('redirect_url') ?? '/apps'
+
   if (isSignedIn) {
-    router.push('/apps')
+    router.push(redirect ? redirect : '/apps')
     return null
   }
-
-  const redirect =
-    new URLSearchParams(window.location.search).get('redirect_url') ?? '/'
 
   async function guestLogin() {
     if (!signIn || !setActive || loginWithGuest) return null
