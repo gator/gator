@@ -5,6 +5,7 @@ import { dark } from '@clerk/themes'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import nprogress from 'nprogress'
 
 const Login = () => {
   const { isLoaded, isSignedIn } = useAuth()
@@ -25,6 +26,7 @@ const Login = () => {
   async function guestLogin() {
     if (!signIn || !setActive || loginWithGuest) return null
     setLoginWithGuest(true)
+    nprogress.start()
 
     const token_request = await fetch(
       'https://gator-scribe.azurewebsites.net/api/get_guest_login_token'
@@ -42,7 +44,10 @@ const Login = () => {
       })
     } catch (error) {
       console.log('Error:', error)
+      nprogress.done()
     }
+
+    nprogress.done()
   }
 
   return (
