@@ -38,7 +38,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <header className='flex items-center justify-between mt-16 mb-32'>
-            <Link href='/' className='flex space-x-3 items-center'>
+            <Link href='/' className='flex space-x-3 items-center w-full'>
               <Image
                 src='/gator_logo.png'
                 alt='Gator Logo'
@@ -48,13 +48,17 @@ export default function RootLayout({
               />
               <h1 className='uppercase font-black text-3xl'>GATOR</h1>
             </Link>
+
             <NavItems />
-            <Button
-              asChild
-              className='bg-green-500 text-white font-bold hover:bg-green-600 h-8'
-            >
-              <Link href='/login'>Login</Link>
-            </Button>
+
+            <div className='w-full flex justify-end'>
+              <Button
+                asChild
+                className='bg-green-500 text-white font-bold hover:bg-green-600 h-8'
+              >
+                <Link href='/login'>Login</Link>
+              </Button>
+            </div>
           </header>
           {children}
         </ThemeProvider>
