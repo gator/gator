@@ -3,6 +3,10 @@ import { Inter as FontSans } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
+import Image from 'next/image'
+import { NavItems } from '@/components/nav-items'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -23,7 +27,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
+          'min-h-screen bg-background font-sans antialiased mx-60',
           fontSans.variable
         )}
       >
@@ -33,6 +37,25 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <header className='flex items-center justify-between mt-16 mb-32'>
+            <Link href='/' className='flex space-x-3 items-center'>
+              <Image
+                src='/gator_logo.png'
+                alt='Gator Logo'
+                width={35}
+                height={35}
+                priority
+              />
+              <h1 className='uppercase font-black text-3xl'>GATOR</h1>
+            </Link>
+            <NavItems />
+            <Button
+              asChild
+              className='bg-green-500 text-white font-bold hover:bg-green-600 h-8'
+            >
+              <Link href='/login'>Login</Link>
+            </Button>
+          </header>
           {children}
         </ThemeProvider>
       </body>
