@@ -1,13 +1,15 @@
 import Image from 'next/image'
-import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 export default function Home() {
   return (
     <main>
+      {/* announcement */}
       <Link
         href='https://scribe.gator.sh'
-        className='group flex justify-center items-center'
+        className='group flex justify-center items-center mb-20'
       >
         <Badge
           variant='outline'
@@ -37,6 +39,55 @@ export default function Home() {
           </svg>
         </Badge>
       </Link>
+
+      {/* landing title */}
+      <div className='mx-60 text-center'>
+        <h1 className='text-7xl text-center leading-tight'>
+          <span
+            style={{
+              background: 'linear-gradient(180deg, #48D256 0%, #286B2F 50%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
+            Caring
+          </span>{' '}
+          for those who Care for{' '}
+          <span
+            style={{
+              background: 'linear-gradient(180deg, #48D256 0%, #286B2F 50%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
+            Us
+          </span>
+        </h1>
+        <h2 className='text-[#9CC2A0] mt-10'>
+          Powerful solutions that help your team speed up. Take your Healthcare
+          to the next level by improving patient outcomes and reducing provider
+          stress.
+        </h2>
+        <div className='mt-10 space-x-5'>
+          <Button
+            asChild
+            variant='outline'
+            className='bg-[#005A00]/10 hover:bg-[#005A00]/20'
+          >
+            <Link href='/login'>Swim through the swamp</Link>
+          </Button>
+
+          <Button
+            asChild
+            variant='outline'
+            className='bg-green-500 hover:bg-green-600'
+          >
+            <Link href='/login'>Get in touch</Link>
+          </Button>
+        </div>
+      </div>
     </main>
   )
 }
