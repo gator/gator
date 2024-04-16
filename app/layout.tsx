@@ -40,6 +40,7 @@ export default function RootLayout({
           <header className='flex items-center justify-between mt-16 mb-32'>
             <div
               style={{
+                zIndex: -10,
                 position: 'absolute',
                 width: '1440px',
                 height: '500px',
