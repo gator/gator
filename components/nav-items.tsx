@@ -40,6 +40,7 @@ export function NavItems() {
                     width={150}
                     height={150}
                     priority
+                    draggable={false}
                   />
                 </div>
               </li>
@@ -73,6 +74,7 @@ export function NavItems() {
                     width={500}
                     height={500}
                     priority
+                    draggable={false}
                   />
                 </div>
               </li>

@@ -57,6 +57,7 @@ export default function RootLayout({
                 width={35}
                 height={35}
                 priority
+                draggable={false}
               />
               <h1 className='uppercase font-black text-3xl'>GATOR</h1>
             </Link>
