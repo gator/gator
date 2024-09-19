@@ -5,11 +5,9 @@ import { dark } from '@clerk/themes'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import nprogress from 'nprogress'
 
 const Login = () => {
   const { isLoaded, isSignedIn } = useAuth()
-  const { signIn, setActive } = useSignIn()
   const router = useRouter()
   const [loginWithGuest, setLoginWithGuest] = useState(false)
 
@@ -21,33 +19,6 @@ const Login = () => {
   if (isSignedIn) {
     router.push(redirect ? redirect : '/apps')
     return null
-  }
-
-  async function guestLogin() {
-    if (!signIn || !setActive || loginWithGuest) return null
-    setLoginWithGuest(true)
-    nprogress.start()
-
-    const token_request = await fetch(
-      'https://gator-scribe.azurewebsites.net/api/get_guest_login_token'
-    )
-    const json = await token_request.json()
-
-    const res = await signIn.create({
-      strategy: 'ticket',
-      ticket: json.token
-    })
-
-    try {
-      setActive({
-        session: res.createdSessionId
-      })
-    } catch (error) {
-      console.log('Error:', error)
-      nprogress.done()
-    }
-
-    nprogress.done()
   }
 
   return (
@@ -71,15 +42,11 @@ const Login = () => {
           </div>
         </div>
         <div className='flex flex-col items-center justify-center w-full bg-zinc-950'>
-          <button
-            className={`px-6 py-2 mb-10 duration-100 rounded-xl text-white/50 bg-[#19191a] ${
-              !loginWithGuest && 'hover:text-white'
-            }`}
-            onClick={guestLogin}
-            disabled={loginWithGuest}
-          >
-            Login as Ali (Guest)
-          </button>
+          <div className='mb-4 text-zinc-800 group hover:text-white transition-colors'>
+            <p className='text-center text-xs underline'>Demo Credentials</p>
+            <p className='text-sm'>Email: ali.gator@gator.sh</p>
+            <p className='text-sm'>Password: ilovegators123</p>
+          </div>
           <SignIn
             appearance={{
               baseTheme: dark,
