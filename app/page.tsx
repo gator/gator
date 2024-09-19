@@ -12,6 +12,8 @@ export default function Home() {
         width={1200}
         height={800}
         className='-z-10 absolute top-0 left-0 w-full'
+        draggable={false}
+        priority
       />
 
       {/* announcement */}
@@ -96,6 +98,31 @@ export default function Home() {
           </Button>
         </div>
       </div>
+
+      {/* bento grid overview */}
+      <section className='relative mt-40 flex justify-center'>
+        <div
+          style={{
+            position: 'absolute',
+            width: '90vw',
+            height: '1451px',
+            top: '-40%',
+            left: '-10%',
+            background:
+              'radial-gradient(50% 50% at 50% 50%, rgba(112, 224, 0, 0.05) 0%, rgba(112, 224, 0, 0) 100%)'
+          }}
+        />
+        <Image
+          src='/overview.svg'
+          alt='Overview'
+          width={1200}
+          height={800}
+          className=''
+          draggable={false}
+          priority
+          style={{ width: 'fit' }}
+        />
+      </section>
     </main>
   )
 }
