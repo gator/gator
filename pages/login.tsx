@@ -47,23 +47,25 @@ const Login = () => {
             <p className='text-sm'>Email: ali.gator@gator.sh</p>
             <p className='text-sm'>Password: ilovegators123</p>
           </div>
-          <SignIn
-            appearance={{
-              baseTheme: dark,
-              elements: {
-                footer: {
-                  display: 'none'
-                },
-                logoImage: {
-                  display: 'none'
-                },
-                header: {
-                  transform: 'translateY(-70px)'
+          <div className='mx-5'>
+            <SignIn
+              appearance={{
+                baseTheme: dark,
+                elements: {
+                  footer: {
+                    display: 'none'
+                  },
+                  logoImage: {
+                    display: 'none'
+                  },
+                  header: {
+                    transform: 'translateY(-70px)'
+                  }
                 }
-              }
-            }}
-            redirectUrl={redirect}
-          />
+              }}
+              redirectUrl={redirect}
+            />
+          </div>
           <p className='mt-10 text-xs text-zinc-500'>
             By logging in, you agree to our{' '}
             <Link href='/terms-of-use' className='underline'>
