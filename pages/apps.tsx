@@ -34,6 +34,13 @@ export default function Apps() {
               <h1 className='text-3xl font-bold'>Scribe</h1>
             </div>
           </Link>
+
+          <Link href='https://scribe-encounter.gator.sh'>
+            <div className='bg-white/5 border-[1px] border-white/50 rounded-lg p-20 w-fit hover:-translate-y-[.1rem] duration-100 text-center'>
+              <p className='mb-1 text-sm'>Gator</p>
+              <h1 className='text-3xl font-bold'>Scribe Encounter</h1>
+            </div>
+          </Link>
         </div>
 
         <div className='absolute bottom-10 right-10'>
