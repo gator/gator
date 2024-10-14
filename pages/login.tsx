@@ -42,10 +42,10 @@ const Login = () => {
           </div>
         </div>
         <div className='flex flex-col items-center justify-center w-full bg-zinc-950'>
-          <div className='mb-4 text-zinc-800 group hover:text-white transition-colors'>
+          <div className='mb-4 group text-white'>
             <p className='text-center text-xs underline'>Demo Credentials</p>
             <p className='text-sm'>Email: ali.gator@gator.sh</p>
-            <p className='text-sm'>Password: ilovegators123</p>
+            <p className='text-sm'>Password: ilovegator</p>
           </div>
           <div className='mx-5'>
             <SignIn
