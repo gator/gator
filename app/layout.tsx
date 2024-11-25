@@ -48,8 +48,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  console.log(process.env.NODE_ENV)
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      publishableKey={
+        process.env.NODE_ENV === 'development'
+          ? 'pk_test_cHJlcGFyZWQtb2FyZmlzaC02Mi5jbGVyay5hY2NvdW50cy5kZXYk'
+          : 'pk_live_Y2xlcmsuZ2F0b3Iuc2gk'
+      }
+    >
       <html lang='en' suppressHydrationWarning>
         <body
           className={cn(
