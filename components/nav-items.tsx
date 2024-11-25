@@ -14,22 +14,19 @@ import {
   NavigationMenuViewport,
   navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu'
-import Link from 'next/link'
 
 export function NavItems() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className='hidden md:block mx-auto w-full'>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className='bg-transparent'>
-            Solutions
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
+          <NavigationMenuContent className='bg-[#005A00]/10'>
             <ul className='grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'>
-              <li className='row-span-3'>
-                <div className='relative overflow-hidden flex h-full w-full select-none flex-col rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md'>
+              <li className='row-span-3 hidden lg:block'>
+                <div className='relative overflow-hidden flex h-full w-full select-none flex-col rounded-md bg-gradient-to-b from-green-600 to-green-800 p-6 no-underline outline-none focus:shadow-md'>
                   <div className='mb-2 text-lg font-medium'>Gator</div>
-                  <p className='text-sm leading-tight text-muted-foreground max-w-32'>
+                  <p className='text-sm leading-tight text-white max-w-32'>
                     Beautiful and simple tools for Healthcare. Speed up your
                     workflow and ease your mind.
                   </p>
@@ -44,7 +41,11 @@ export function NavItems() {
                   />
                 </div>
               </li>
-              <ListItem href='https://scribe.gator.sh' title='Scribe'>
+              <ListItem
+                href='https://scribe.gator.sh'
+                title='Scribe'
+                className='hover:bg-green-500/10'
+              >
                 Automate clinical documentation with ambiance from encounters.
               </ListItem>
             </ul>
@@ -55,40 +56,26 @@ export function NavItems() {
           <NavigationMenuTrigger className='bg-transparent'>
             Company
           </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className='grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[1fr_.75fr]'>
-              <div className='row-span-3'>
-                <ListItem href='/company' title='Company'>
-                  Company overview, mission, and founding story.
-                </ListItem>
-                <ListItem href='/team' title='Team'>
-                  Meet the team.
-                </ListItem>
-              </div>
-              <li className='row-span-3'>
-                <div className='relative overflow-hidden flex h-full w-full select-none flex-col rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md'>
-                  <Image
-                    src='/ali.png'
-                    alt='Gator Logo'
-                    className='absolute bottom-0 translate-y-14 -translate-x-2'
-                    width={500}
-                    height={500}
-                    priority
-                    draggable={false}
-                  />
-                </div>
-              </li>
+          <NavigationMenuContent className='bg-[#005A00]/10'>
+            <ul className='grid w-[200px] gap-3 p-4 md:w-[250px] md:grid-cols-1 lg:w-[300px] '>
+              <ListItem
+                href='/company'
+                title='Company'
+                className='hover:bg-green-500/10'
+              >
+                Company overview, mission, and founding story.
+              </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
 
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <Link href='/research' legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Research
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>
   )
