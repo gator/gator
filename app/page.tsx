@@ -19,7 +19,7 @@ export default function Home() {
       {/* announcement */}
       <div className='flex justify-center items-center mb-20'>
         <Link
-          href='/login?demo=true&redirect_url=https%3A%2F%2Fscribe.gator.sh'
+          href='/login?redirect_url=https%3A%2F%2Fscribe.gator.sh&demo=true'
           className='group'
         >
           <Badge
