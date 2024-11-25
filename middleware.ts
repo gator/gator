@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 const isAuthRoute = createRouteMatcher(['/login(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
-  const urlParams = new URLSearchParams(req.url.split('/').at(-1))
+  const urlParams = new URLSearchParams(req.url.split('?').at(-1))
   const redirectUrl = urlParams.get('redirect_url')
   const { userId } = await auth()
 
