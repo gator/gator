@@ -18,6 +18,7 @@ import {
   DialogTrigger
 } from '@/components/ui/dialog'
 import { ClerkProvider } from '@clerk/nextjs'
+import { LoginButton } from '@/components/LoginButton'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -101,12 +102,7 @@ export default function RootLayout({
               <NavItems />
 
               <div className='w-full flex justify-end space-x-2'>
-                <Button
-                  asChild
-                  className='bg-green-500 text-white font-bold hover:bg-green-600 h-10'
-                >
-                  <Link href='/login'>Login</Link>
-                </Button>
+                <LoginButton />
 
                 {/* mobile nav */}
                 <Dialog>
