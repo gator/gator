@@ -9,11 +9,8 @@ export default clerkMiddleware(async (auth, req) => {
   const { userId } = await auth()
 
   if (isAuthRoute(req) && redirectUrl && userId) {
-    // return NextResponse.redirect(new URL(redirectUrl), {
-    //   url: req.url
-    // })
-    return NextResponse.redirect(new URL(redirectUrl, req.url))
-
+    if (req.method === 'POST') return NextResponse.redirect(req.url)
+    return NextResponse.redirect(new URL(redirectUrl))
   }
 })
 
