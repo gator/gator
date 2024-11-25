@@ -27,11 +27,11 @@ export default function Page() {
       <section className='my-10 lg:my-14'>
         <h2 className='text-xl mb-3 text-[#9CC2A0]'>Mission</h2>
         <p>
-          Gator's mission is to reduce burnout for healthcare providers by
+          Gator&apos;s mission is to reduce burnout for healthcare providers by
           providing software solutions that work alongside them. Having elegant,
           yet powerful solutions allow healthcare providers to spend more time
           focused on the patient rather than worrying about extraneous tasks
-          unrelated directly to the patient's concerns.
+          unrelated directly to the patient&apos;s concerns.
         </p>
       </section>
 

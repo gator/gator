@@ -1,6 +1,8 @@
 'use client'
 
+// @ts-ignore
 import * as Clerk from '@clerk/elements/common'
+// @ts-ignore
 import * as SignIn from '@clerk/elements/sign-in'
 import { useSearchParams } from 'next/navigation'
 

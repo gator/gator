@@ -18,7 +18,7 @@ export default function Page() {
 
       <p className='my-2'>
         These terms and conditions outline the rules and regulations for the use
-        of Gator, LLC's Website, located at https://gator.sh.
+        of Gator Technologies, LLC&apos;s Website, located at https://gator.sh.
       </p>
 
       <p className='my-2'>
@@ -29,29 +29,32 @@ export default function Page() {
 
       <p className='my-2'>
         The following terminology applies to these Terms and Conditions, Privacy
-        Statement and Disclaimer Notice and all Agreements: "Client", "You" and
-        "Your" refers to you, the person log on this website and compliant to
-        the Company's terms and conditions. "The Company", "Ourselves", "We",
-        "Our" and "Us", refers to our Company. "Party", "Parties", or "Us",
-        refers to both the Client and ourselves. All terms refer to the offer,
-        acceptance and consideration of payment necessary to undertake the
-        process of our assistance to the Client in the most appropriate manner
-        for the express purpose of meeting the Client's needs in respect of
-        provision of the Company's stated services, in accordance with and
-        subject to, prevailing law of us. Any use of the above terminology or
-        other words in the singular, plural, capitalization and/or he/she or
-        they, are taken as interchangeable and therefore as referring to same.
+        Statement and Disclaimer Notice and all Agreements: &quot;Client&quot;,
+        &quot;You&quot; and &quot;Your&quot; refers to you, the person log on
+        this website and compliant to the Company&apos;s terms and conditions.
+        &quot;The Company&quot;, &quot;Ourselves&quot;, &quot;We&quot;,
+        &quot;Our&quot; and &quot;Us&quot;, refers to our Company.
+        &quot;Party&quot;, &quot;Parties&quot;, or &quot;Us&quot;, refers to
+        both the Client and ourselves. All terms refer to the offer, acceptance
+        and consideration of payment necessary to undertake the process of our
+        assistance to the Client in the most appropriate manner for the express
+        purpose of meeting the Client&apos;s needs in respect of provision of
+        the Company&apos;s stated services, in accordance with and subject to,
+        prevailing law of us. Any use of the above terminology or other words in
+        the singular, plural, capitalization and/or he/she or they, are taken as
+        interchangeable and therefore as referring to same.
       </p>
 
       <h3 className='mt-10 text-lg font-bold'>Cookies</h3>
 
       <p className='my-2'>
         We employ the use of cookies. By accessing Gator, you agreed to use
-        cookies in agreement with the Gator, LLC's Privacy Policy.{' '}
+        cookies in agreement with the Gator Technologies, LLC&apos;s Privacy
+        Policy.
       </p>
 
       <p className='my-2'>
-        Most interactive websites use cookies to let us retrieve the user's
+        Most interactive websites use cookies to let us retrieve the user&apos;s
         details for each visit. Cookies are used by our website to enable the
         functionality of certain areas to make it easier for people visiting our
         website. Some of our affiliate/advertising partners may also use
@@ -61,11 +64,11 @@ export default function Page() {
       <h3 className='mt-10 text-lg font-bold'>License</h3>
 
       <p className='my-2'>
-        Unless otherwise stated, Gator, LLC and/or its licensors own the
-        intellectual property rights for all material on Gator. All intellectual
-        property rights are reserved. You may access this from Gator for your
-        own personal use subjected to restrictions set in these terms and
-        conditions.
+        Unless otherwise stated, Gator Technologies, LLC and/or its licensors
+        own the intellectual property rights for all material on Gator. All
+        intellectual property rights are reserved. You may access this from
+        Gator for your own personal use subjected to restrictions set in these
+        terms and conditions.
       </p>
 
       <p className='my-2'>You must not:</p>
@@ -84,21 +87,22 @@ export default function Page() {
 
       <p className='my-2'>
         Parts of this website offer an opportunity for users to post and
-        exchange opinions and information in certain areas of the website.
-        Gator, LLC does not filter, edit, publish or review Comments prior to
-        their presence on the website. Comments do not reflect the views and
-        opinions of Gator, LLC,its agents and/or affiliates. Comments reflect
-        the views and opinions of the person who post their views and opinions.
-        To the extent permitted by applicable laws, Gator, LLC shall not be
-        liable for the Comments or for any liability, damages or expenses caused
-        and/or suffered as a result of any use of and/or posting of and/or
-        appearance of the Comments on this website.
+        exchange opinions and information in certain areas of the website. Gator
+        Technologies, LLC does not filter, edit, publish or review Comments
+        prior to their presence on the website. Comments do not reflect the
+        views and opinions of Gator Technologies, LLC,its agents and/or
+        affiliates. Comments reflect the views and opinions of the person who
+        post their views and opinions. To the extent permitted by applicable
+        laws, Gator Technologies, LLC shall not be liable for the Comments or
+        for any liability, damages or expenses caused and/or suffered as a
+        result of any use of and/or posting of and/or appearance of the Comments
+        on this website.
       </p>
 
       <p className='my-2'>
-        Gator, LLC reserves the right to monitor all Comments and to remove any
-        Comments which can be considered inappropriate, offensive or causes
-        breach of these Terms and Conditions.
+        Gator Technologies, LLC reserves the right to monitor all Comments and
+        to remove any Comments which can be considered inappropriate, offensive
+        or causes breach of these Terms and Conditions.
       </p>
 
       <p className='my-2'>You warrant and represent that:</p>
@@ -124,9 +128,9 @@ export default function Page() {
       </ul>
 
       <p className='my-2'>
-        You hereby grant Gator, LLC a non-exclusive license to use, reproduce,
-        edit and authorize others to use, reproduce and edit any of your
-        Comments in any and all forms, formats or media.
+        You hereby grant Gator Technologies, LLC a non-exclusive license to use,
+        reproduce, edit and authorize others to use, reproduce and edit any of
+        your Comments in any and all forms, formats or media.
       </p>
 
       <h3 className='mt-10 text-lg font-bold'>Hyperlinking to our Content</h3>
@@ -156,7 +160,7 @@ export default function Page() {
         other Website information so long as the link: (a) is not in any way
         deceptive; (b) does not falsely imply sponsorship, endorsement or
         approval of the linking party and its products and/or services; and (c)
-        fits within the context of the linking party's site.
+        fits within the context of the linking party&apos;s site.
       </p>
 
       <p className='my-2'>
@@ -185,24 +189,26 @@ export default function Page() {
         that: (a) the link would not make us look unfavorably to ourselves or to
         our accredited businesses; (b) the organization does not have any
         negative records with us; (c) the benefit to us from the visibility of
-        the hyperlink compensates the absence of Gator, LLC; and (d) the link is
-        in the context of general resource information.
+        the hyperlink compensates the absence of Gator Technologies, LLC; and
+        (d) the link is in the context of general resource information.
       </p>
 
       <p className='my-2'>
         These organizations may link to our home page so long as the link: (a)
         is not in any way deceptive; (b) does not falsely imply sponsorship,
         endorsement or approval of the linking party and its products or
-        services; and (c) fits within the context of the linking party's site.
+        services; and (c) fits within the context of the linking party&apos;s
+        site.
       </p>
 
       <p className='my-2'>
         If you are one of the organizations listed in paragraph 2 above and are
         interested in linking to our website, you must inform us by sending an
-        e-mail to Gator, LLC. Please include your name, your organization name,
-        contact information as well as the URL of your site, a list of any URLs
-        from which you intend to link to our Website, and a list of the URLs on
-        our site to which you would like to link. Wait 2-3 weeks for a response.
+        e-mail to Gator Technologies, LLC. Please include your name, your
+        organization name, contact information as well as the URL of your site,
+        a list of any URLs from which you intend to link to our Website, and a
+        list of the URLs on our site to which you would like to link. Wait 2-3
+        weeks for a response.
       </p>
 
       <p className='my-2'>
@@ -217,13 +223,13 @@ export default function Page() {
         <li className='list-disc'>
           By use of any other description of our Website being linked to that
           makes sense within the context and format of content on the linking
-          party's site.
+          party&apos;s site.
         </li>
       </ul>
 
       <p className='my-2'>
-        No use of Gator, LLC's logo or other artwork will be allowed for linking
-        absent a trademark license agreement.
+        No use of Gator Technologies, LLC&apos;s logo or other artwork will be
+        allowed for linking absent a trademark license agreement.
       </p>
 
       <h3 className='mt-10 text-lg font-bold'>iFrames</h3>
@@ -251,7 +257,7 @@ export default function Page() {
         We reserve the right to request that you remove all links or any
         particular link to our Website. You approve to immediately remove all
         links to our Website upon request. We also reserve the right to amen
-        these terms and conditions and it's linking policy at any time. By
+        these terms and conditions and it&apos;s linking policy at any time. By
         continuously linking to our Website, you agree to be bound to and follow
         these linking terms and conditions.
       </p>
