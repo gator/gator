@@ -9,7 +9,11 @@ export default clerkMiddleware(async (auth, req) => {
   const { userId } = await auth()
 
   if (isAuthRoute(req) && redirectUrl && userId) {
-    return NextResponse.redirect(redirectUrl, 307)
+    // return NextResponse.redirect(new URL(redirectUrl), {
+    //   url: req.url
+    // })
+    return NextResponse.redirect(new URL(redirectUrl, req.url))
+
   }
 })
 
