@@ -22,12 +22,18 @@ export default function Page() {
             <SignOutButton />
           </div>
         </div>
-        <div>
+        <div className='space-x-4'>
           <Link
             href='https://scribe.gator.sh'
             className='bg-green-500 text-white font-bold hover:bg-green-600 text-lg py-2 px-3 rounded-md'
           >
             Scribe
+          </Link>
+          <Link
+            href='https://scribe-encounter.gator.sh'
+            className='bg-green-500 text-white font-bold hover:bg-green-600 text-lg py-2 px-3 rounded-md'
+          >
+            Scribe Encounter
           </Link>
         </div>
       </SignedIn>
