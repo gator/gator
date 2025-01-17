@@ -96,7 +96,10 @@ export default function Home() {
             variant='outline'
             className='bg-green-500 hover:bg-green-600'
           >
-            <Link href='https://forms.office.com/r/Xcg7i91ibx' target='_blank'>
+            <Link
+              href='https://talented-advantage-3c8.notion.site/17ebdd4e046b818eb9f9ca1b52331a72'
+              target='_blank'
+            >
               Get in touch
             </Link>
           </Button>
