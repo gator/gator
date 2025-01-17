@@ -65,6 +65,14 @@ export function NavItems() {
               >
                 Company overview, mission, and founding story.
               </ListItem>
+              <ListItem
+                href='/help'
+                target='_blank'
+                title='Help'
+                className='hover:bg-green-500/10'
+              >
+                Customer support.
+              </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
