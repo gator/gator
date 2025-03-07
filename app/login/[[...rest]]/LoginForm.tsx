@@ -4,11 +4,11 @@
 import * as Clerk from '@clerk/elements/common'
 // @ts-ignore
 import * as SignIn from '@clerk/elements/sign-in'
-import { useSearchParams } from 'next/navigation'
+// import { useSearchParams } from 'next/navigation'
 
 export default function SignInPage() {
-  const searchParams = useSearchParams()
-  const demo = searchParams.get('demo')
+  // const searchParams = useSearchParams()
+  // const demo = searchParams.get('demo')
 
   return (
     <div className='text-black'>
@@ -33,7 +33,7 @@ export default function SignInPage() {
                   type='text'
                   required
                   className='w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-red-400'
-                  value={demo && 'ali.gator@gator.sh'}
+                  // value={demo && 'ali.gator@gator.sh'}
                 />
               </div>
               <Clerk.FieldError className='block text-sm text-red-400' />
@@ -46,7 +46,7 @@ export default function SignInPage() {
                 type='password'
                 required
                 className='w-full rounded-md bg-white px-3.5 py-2 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-red-400'
-                value={demo && 'iloveGator123'}
+                // value={demo && 'iloveGator123'}
               />
               <Clerk.FieldError className='block text-sm text-red-400' />
             </Clerk.Field>

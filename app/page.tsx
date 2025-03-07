@@ -19,8 +19,9 @@ export default function Home() {
       {/* announcement */}
       <div className='flex justify-center items-center mb-20'>
         <Link
-          href='/login?redirect_url=https%3A%2F%2Fscribe.gator.sh&demo=true'
+          href='https://outlook.office.com/bookwithme/user/7ed952622af445d7bd29d3abf71a26a0%40gator.sh?anonymous'
           className='group'
+          target='_blank'
         >
           <Badge
             variant='outline'
@@ -30,9 +31,9 @@ export default function Home() {
               variant='default'
               className='bg-green-500 text-white font-bold -translate-x-2 hover:bg-green-600'
             >
-              Try Gator Scribe
+              See Gator Scribe
             </Badge>
-            Check out the Dashboard Demo
+            Book a demo to see Gator Scribe
             <svg
               width='15'
               height='15'
